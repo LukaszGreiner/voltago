@@ -14,7 +14,7 @@ export default {
         "neon-zielony-jasny-2": "#D5F9D0",
       },
       fontFamily: {
-        sans: ["DMSans", "sans"],
+        DMSans: ["DMSans", "serif"],
       },
     },
   },
