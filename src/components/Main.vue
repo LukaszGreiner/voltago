@@ -3,10 +3,10 @@ import Button from "./Button.vue";
 </script>
 
 <template>
-  <main>
+  <main class="flex place-items-center lg:flex-row-reverse h-screen">
     <!-- Hero background image -->
     <div
-      class="flex items-center md:items-end md:justify-start justify-center bg-red-400 h-auto"
+      class="flex lg:flex-1 items-center md:items-end md:justify-start justify-center bg-red-400 h-auto"
     >
       <picture
         class="absolute inset-0 lg:inset-auto lg:right-0 lg:top-0 w-full lg:h-1/2 lg:w-1/2 object-cover"
@@ -23,9 +23,7 @@ import Button from "./Button.vue";
       </picture>
     </div>
     <!-- Call to action -->
-    <div
-      class="relative mt-[240px] lg:mt-[200px] lg:block max-w-[528px] right-0 md:ml-4 md:m"
-    >
+    <div class="flex flex-col flex-end z-20 lg:block max-w-[528px] right-0">
       <h1 class="text-[32px] leading-[44px] font-medium mb-4 md:mb-6">
         Elektromobilität <b>für alle.</b>
       </h1>

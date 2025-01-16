@@ -10,7 +10,7 @@ const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="bg-tlo-jasne px-4">
+  <div class="bg-tlo-jasne px-4 md:px-12 lg:px-20">
     <Header @openMenu="isMenuOpen = true" />
     <MobileMenu v-if="isMenuOpen" @closeMenu="isMenuOpen = false" />
     <Main />

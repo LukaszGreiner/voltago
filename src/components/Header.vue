@@ -1,10 +1,10 @@
 <script setup></script>
 
 <template>
-  <header class="sticky -mx-4 px-4 bg-tlo-jasne md:static top-0 z-10">
+  <header class="sticky -mx-4 px-4 md:px-0 bg-tlo-jasne md:static top-0 z-10">
     <!-- Logo & Menu Icon -->
     <div
-      class="relative flex justify-between lg:justify-start inset-0 z-10 pt-4 md:px-12 lg:pl-20"
+      class="relative flex justify-between lg:justify-start inset-0 z-10 pt-4"
     >
       <div class="h-8 w-[182px] lg:mr-8">
         <img src="../assets/img/logo@3x1.svg" alt="voltago logo" />
