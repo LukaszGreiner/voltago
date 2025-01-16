@@ -4,12 +4,14 @@ import ScooterCard from "./ScooterCard.vue";
 
 <template>
   <section>
-    <div>
-      <h2>Du möchtest unabhängig sein und diesen Elektro-Roller besitzen?</h2>
-      <p>Ab € 1790,- inkl. Mwst. gehört er nur dir!</p>
+    <div class="mb-10 bg-tlo-ciemne">
+      <h2 class="text-2xl mb-4">
+        Du möchtest unabhängig sein und diesen Elektro-Roller besitzen?
+      </h2>
+      <p class="text-lg">Ab € 1790,- inkl. Mwst. gehört er nur <b>dir!</b></p>
     </div>
     <div
-      class="flex flex-col items-center justify-center md:flex-row gap-10 md:gap-4 bg-red-200"
+      class="flex flex-col items-center justify-center md:flex-row gap-10 md:gap-4"
     >
       <ScooterCard
         name="Elektro-Roller"

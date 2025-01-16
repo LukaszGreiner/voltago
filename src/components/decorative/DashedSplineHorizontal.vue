@@ -1,0 +1,17 @@
+<template>
+  <svg
+    width="672"
+    height="70"
+    viewBox="0 0 672 70"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M671 37.9025C608.718 10.6656 454.268 -27.9043 295.92 34.9902C126.385 102.328 32.5022 54.3837 1.00001 21.6738"
+      stroke="#00E500"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-dasharray="24 24"
+    />
+  </svg>
+</template>

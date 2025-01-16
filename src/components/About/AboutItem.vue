@@ -1,5 +1,5 @@
 <script setup>
-import MarkDone from "./icons/mark-done.vue";
+import MarkDone from "../icons/mark-done.vue";
 </script>
 
 <template>
