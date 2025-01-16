@@ -1,8 +1,8 @@
 <script setup>
-import DashedSpline from "../decorative/DashedSpline.vue";
-import AboutList from "../about/AboutList.vue";
-import ScooterTiles from "./ScooterTiles.vue";
-import ScootersImg from "./ScootersImg.vue";
+import DashedSpline from "./decorative/DashedSpline.vue";
+import AboutList from "./about/AboutList.vue";
+import ScooterTiles from "./About/ScooterTiles.vue";
+import ScootersImg from "./About/ScootersImg.vue";
 </script>
 
 <template>
