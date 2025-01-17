@@ -6,12 +6,13 @@ import MobileMenu from "./components/MobileMenu.vue";
 import About from "./components/About.vue";
 import Models from "./components/Models.vue";
 import ScooterTile from "./components/About/ScooterTile.vue";
+import ScootersComparison from "./components/Models/ScootersComparison.vue";
 
 const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="bg-tlo-jasne px-4 md:px-12 lg:px-20">
+  <div class="bg-tlo-jasne">
     <Header @openMenu="isMenuOpen = true" />
     <MobileMenu v-if="isMenuOpen" @closeMenu="isMenuOpen = false" />
     <Main />
@@ -20,5 +21,3 @@ const isMenuOpen = ref(false);
     <DrivingLicence />
   </div>
 </template>
-
-<style scoped></style>

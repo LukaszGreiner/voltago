@@ -1,77 +1,26 @@
-<template>
-  <div class="overflow-x-auto">
-    <table class="table-auto border-collapse border border-gray-300 w-full">
-      <thead>
-        <tr>
-          <th class="border border-gray-300 px-4 py-2 bg-green-100">ZX-500</th>
-          <th class="border border-gray-300 px-4 py-2 bg-green-100">
-            DJ03-V55
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td
-            colspan="2"
-            class="border border-gray-300 px-4 py-2 font-medium bg-green-50"
-          >
-            Führerschein
-          </td>
-        </tr>
-        <tr>
-          <td class="border border-gray-300 px-4 py-2">
-            L1E-B für Führerschein Klasse AM und höher zugelassen für 2 Personen
-          </td>
-          <td class="border border-gray-300 px-4 py-2">
-            L3E-A1 für Führerschein Klasse A1 ab 15.5 Jahren zugelassen für 2
-            Personen
-          </td>
-        </tr>
-        <tr>
-          <td
-            colspan="2"
-            class="border border-gray-300 px-4 py-2 font-medium bg-green-50"
-          >
-            Geschwindigkeit
-          </td>
-        </tr>
-        <tr>
-          <td class="border border-gray-300 px-4 py-2">
-            45km/h in 3 Vorwahlstufen
-          </td>
-          <td class="border border-gray-300 px-4 py-2">
-            60km/h in 3 Vorwahlstufen
-          </td>
-        </tr>
-        <tr>
-          <td
-            colspan="2"
-            class="border border-gray-300 px-4 py-2 font-medium bg-green-50"
-          >
-            Rückwärtsgang
-          </td>
-        </tr>
-        <tr>
-          <td class="border border-gray-300 px-4 py-2 text-center">❌</td>
-          <td class="border border-gray-300 px-4 py-2 text-center">❌</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
-
 <script setup>
 import { ref } from "vue";
+import MarkDone from "../icons/mark-done.vue";
+import Button from "../utils/Button.vue";
 
-// Product data
-const products = ref([
+const scootersTable = [
   {
     name: "ZX-500",
     features: {
       license:
         "L1E-B für Führerschein Klasse AM und höher zugelassen für 2 Personen",
       speed: "45km/h in 3 Vorwahlstufen",
-      reverse: false,
+      reverse: true,
+      remoteControl: true,
+      usbCharging: true,
+      luggageCarrier: "mit Haltegriff",
+      topCase: "kann 1 Zusatz-Akku aufnehmen",
+      dimensions: "L1680 x B710 x H1050mm",
+      weight: "71.3kg inkl. Akku (10.3kg)",
+      battery:
+        "60V/24Ah Lithium Akku – herausnehmbar für Home-Charging d.h. keine Ladestation nötig!",
+      range: "-",
+      charger: "3A im Lieferumfang",
     },
   },
   {
@@ -80,12 +29,105 @@ const products = ref([
       license:
         "L3E-A1 für Führerschein Klasse A1 ab 15.5 Jahren zugelassen für 2 Personen",
       speed: "60km/h in 3 Vorwahlstufen",
-      reverse: false,
+      reverse: true,
+      remoteControl: true,
+      usbCharging: true,
+      luggageCarrier: "mit Koffer",
+      topCase: "XXL Topcase für 2 Helme + Platz",
+      dimensions:
+        "(ohne Spiegel) L1880 x B860 x H1180 mm3 (mit Spiegel) L1880 x B920 x H1330 mm3",
+      weight: "57kg Akku 13,7kg",
+      battery:
+        "Basis 60V/30Ah Li-Ionen Akku – entnehmbar für Home-Charging unter der Bank passen 2 Stück für bis zu 130km",
+      range: "ca. 65km / Batterie",
+      charger: "3A im Lieferumfang",
     },
   },
-]);
+];
+
+const features = [
+  { name: "Führerschein", key: "license" },
+  { name: "Geschwindigkeit", key: "speed" },
+  { name: "Rückwärtsgang", key: "reverse" },
+  { name: "Remote Control – Alarmsystem", key: "remoteControl" },
+  {
+    name: "USB Anschluss / Handy-Ladung während der Fahrt",
+    key: "usbCharging",
+  },
+  { name: "Gepäckträger", key: "luggageCarrier" },
+  { name: "TopCase", key: "topCase" },
+  { name: "Abmessungen", key: "dimensions" },
+  { name: "Gewicht", key: "weight" },
+  { name: "Akku", key: "battery" },
+  { name: "Reichweite", key: "range" },
+  { name: "Ladegerät", key: "charger" },
+];
+
+function toggleTable() {
+  tableHeight.value = tableHeight.value === "h-full" ? "h-[750px]" : "h-full";
+  btnShowMore.value = !btnShowMore.value;
+  btnShowLess.value = !btnShowLess.value;
+}
+
+const tableHeight = ref("h-[750px]");
+const btnShowMore = ref(true);
+const btnShowLess = ref(false);
 </script>
 
-<style scoped>
-/* Add any custom styles if needed */
-</style>
+<template>
+  <div class="mt-12">
+    <div class="mb-12 overflow-hidden" :class="tableHeight">
+      <table>
+        <thead>
+          <tr class="text-lg leading-[26px] font-bold">
+            <!-- Scooter Model  -->
+
+            <th
+              v-for="scooter in scootersTable"
+              :key="scooter.name"
+              class="pb-4"
+            >
+              <p class="mb-2 text-center text-lg leading-7 font-normal">
+                Elektro-Roller
+              </p>
+              {{ scooter.name }}
+            </th>
+          </tr>
+        </thead>
+        <tbody class="text-center text-[15px] leading-[22px]">
+          <!-- Scooter feature -->
+          <template v-for="(feature, index) in features" :key="index">
+            <tr class="bg-tlo-ciemne-2">
+              <td :colspan="scootersTable.length" class="px-4 py-1">
+                {{ feature.name }}
+              </td>
+            </tr>
+            <tr class="mb-3 pb-3">
+              <!-- Feature description -->
+              <td
+                v-for="scooter in scootersTable"
+                :key="scooter.name"
+                class="pt-3 pb-6 even:pl-3 odd:pr-3 last:border-b-1 odd:border-r border-jasny-ciemny-zielen border-dashed"
+              >
+                <template v-if="scooter.features[feature.key] === true">
+                  <MarkDone />
+                </template>
+                <template v-else>
+                  {{ scooter.features[feature.key] }}
+                </template>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <Button
+      @click="toggleTable"
+      class="mx-auto"
+      btn-type="secondary"
+      :arrow-up="btnShowLess"
+      :arrow-down="btnShowMore"
+      >Spezifikation reduzieren</Button
+    >
+  </div>
+</template>

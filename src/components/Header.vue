@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <header class="sticky -mx-4 px-4 md:px-0 bg-tlo-jasne md:static top-0 z-30">
+  <header class="sticky bg-tlo-jasne md:static top-0 z-30">
     <!-- Logo & Menu Icon -->
     <div
       class="relative flex justify-between lg:justify-start inset-0 z-10 pt-4"

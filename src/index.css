@@ -8,3 +8,25 @@ body {
   background-color: #fefaf7;
   font-family: DMSans, sans-serif;
 }
+
+section,
+header {
+  padding-left: 1rem /* 16px */;
+  padding-right: 1rem /* 16px */;
+}
+
+@media (min-width: 768px) {
+  section,
+  header {
+    padding-left: 3rem /* 48px */;
+    padding-right: 3rem /* 48px */;
+  }
+}
+
+@media (min-width: 1024px) {
+  section,
+  header {
+    padding-left: 5rem /* 80px */;
+    padding-right: 5rem /* 80px */;
+  }
+}

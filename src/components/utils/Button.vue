@@ -3,6 +3,7 @@ import { ref } from "vue";
 import ArrowLeft from "../icons/arrow-left.vue";
 import ArrowRight from "../icons/arrow-right.vue";
 import ArrowDown from "../icons/arrow-down.vue";
+import ArrowUp from "../icons/arrow-up.vue";
 
 defineProps({
   btnType: {
@@ -14,6 +15,10 @@ defineProps({
     default: false,
   },
   arrowLeft: {
+    type: Boolean,
+    default: false,
+  },
+  arrowUp: {
     type: Boolean,
     default: false,
   },
@@ -34,7 +39,7 @@ const btnTypes = ref({
   // green
   primary: `${btnBase} bg-ciemny-zielony text-tlo-jasne disabled:bg-jasny-ciemny-zielen`,
   // transparent with outline
-  secondary: `${btnBase} bg-transparent text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
+  secondary: `${btnBase} bg-tlo-jasne text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
 });
 </script>
 
@@ -45,6 +50,7 @@ const btnTypes = ref({
       <slot />
       <ArrowRight v-if="arrowRight" />
       <ArrowDown v-if="arrowDown" />
+      <ArrowUp v-if="arrowUp" />
     </div>
   </button>
 </template>
