@@ -10,14 +10,16 @@ body {
 }
 
 section,
-header {
+header,
+main {
   padding-left: 1rem /* 16px */;
   padding-right: 1rem /* 16px */;
 }
 
 @media (min-width: 768px) {
   section,
-  header {
+  header,
+  main {
     padding-left: 3rem /* 48px */;
     padding-right: 3rem /* 48px */;
   }
@@ -25,7 +27,8 @@ header {
 
 @media (min-width: 1024px) {
   section,
-  header {
+  header,
+  main {
     padding-left: 5rem /* 80px */;
     padding-right: 5rem /* 80px */;
   }

@@ -5,7 +5,9 @@ import ScootersComparison from "./Models/ScootersComparison.vue";
 </script>
 
 <template>
-  <section class="flex flex-col last:items-center py-12 bg-tlo-ciemne">
+  <section
+    class="flex flex-col items-center last:items-center py-12 bg-tlo-ciemne"
+  >
     <ModelsHeading />
     <ScooterCards />
     <ScootersComparison />

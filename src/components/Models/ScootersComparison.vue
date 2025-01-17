@@ -75,7 +75,7 @@ const btnShowLess = ref(false);
 </script>
 
 <template>
-  <div class="mt-12">
+  <div class="grid justify-center mt-12">
     <div class="mb-12 overflow-hidden" :class="tableHeight">
       <table>
         <thead>
