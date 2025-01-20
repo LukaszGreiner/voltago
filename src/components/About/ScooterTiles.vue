@@ -8,7 +8,7 @@ import ScooterTile from "./ScooterTile.vue";
 <template>
   <!-- Scooter Tiles -->
 
-  <div class="grid gap-14 my-14 md:flex">
+  <div class="grid gap-14 my-14 md:flex mx-auto">
     <!-- Splines are hidden by CSS -->
     <DashedSplineVertical
       class="absolute md:hidden left-1/2 -translate-x-1/2 -mt-16"
