@@ -8,7 +8,6 @@ import ScootersImg from "./About/ScootersImg.vue";
 <template>
   <!--About section-->
   <section class="grid justify-center">
-    <DashedSpline />
     <div class="lg:grid lg:grid-cols-2 items-center gap-[62.5px]">
       <ScootersImg class="relative mt-20 lg:mt-0" />
       <AboutList />

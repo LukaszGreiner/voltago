@@ -5,7 +5,7 @@ import BurgerBtnClose from "./icons/burger-btn-close.vue";
 <template>
   <Teleport to="body">
     <div
-      class="fixed inset-0 z-50 h-screen md:max-h-[478px] w-full bg-neon-zielony-jasny-2"
+      class="fixed inset-0 z-[99] h-screen md:max-h-[478px] w-full bg-neon-zielony-jasny-2 overflow-y-scroll"
     >
       <nav class="grid w-100 px-4 pt-4 md:px-12">
         <button @click="$emit('closeMenu')" class="flex ml-auto">
