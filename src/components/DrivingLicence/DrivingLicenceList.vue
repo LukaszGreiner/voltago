@@ -1,7 +1,7 @@
 <script setup>
-import AboutItem from "./AboutItem.vue";
+import DrivingLicenceListItem from "./DrivingLicenceListItem.vue";
 
-const aboutList = [
+const DrivingLicenceList = [
   "Perfekt für Azubis, Studenten und gestresste Stadtbewohner",
   "Zugelassen für 2 Personen",
   "Als Mofa mit 25km/h, mit 45km/h und Führerschein AM oder schneller mit A1",
@@ -12,7 +12,7 @@ const aboutList = [
 </script>
 
 <template>
-  <!-- About list -->
+  <!-- DrivingLicenceList list -->
   <div class="mb-14 lg:mb-0 lg:mr-16">
     <h2
       class="text-2xl lg:text-[32px] lg:leading-[44px] lg:relative lg:-left-[125px] lg:-top-10 lg:whitespace-nowrap"
@@ -22,8 +22,8 @@ const aboutList = [
     <ul
       class="text-base md:text-lg md:leading-6 lg:leading-[26px] mb-4 space-y-4 lg:space-y-5"
     >
-      <li v-for="line in aboutList" :key="line">
-        <AboutItem>{{ line }}</AboutItem>
+      <li v-for="line in DrivingLicenceList" :key="line">
+        <DrivingLicenceListItem>{{ line }}</DrivingLicenceListItem>
       </li>
     </ul>
   </div>

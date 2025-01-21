@@ -3,7 +3,7 @@
     width="60"
     height="36"
     viewBox="0 0 60 36"
-    aria-label="Close menu"
+    aria-label="Close menu button"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >

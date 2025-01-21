@@ -1,5 +1,4 @@
 <script setup>
-import CallToAction from "./CallToAction.vue";
 import DashedSplineHorizontalLong from "../decorative/DasheSplineHorizontalLong.vue";
 </script>
 <template>
@@ -19,7 +18,7 @@ import DashedSplineHorizontalLong from "../decorative/DasheSplineHorizontalLong.
         srcset="/src/assets/img/Voltago-hero__tablet.jpg"
       />
       <img src="/src/assets/img/Voltago-hero__mobile.jpg" alt="Hero Image" />
-      <DashedSplineHorizontalLong
+      <dashed-spline-horizontal-long
         class="hidden lg:block -mt-20 -mr-10 w-full"
       />
     </picture>

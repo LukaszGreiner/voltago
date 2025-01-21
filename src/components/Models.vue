@@ -6,6 +6,7 @@ import ScootersComparison from "./Models/ScootersComparison.vue";
 
 <template>
   <section
+    id="options"
     class="flex flex-col items-center last:items-center py-12 bg-tlo-ciemne"
   >
     <ModelsHeading />

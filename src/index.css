@@ -8,6 +8,9 @@ body {
   background-color: #fefaf7;
   font-family: DMSans, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 section,
 header,

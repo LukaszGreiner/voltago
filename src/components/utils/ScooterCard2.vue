@@ -66,7 +66,11 @@ const cardTypes = {
     >
       <div class="flex flex-col gap-2">
         <div class="flex">
-          <input type="radio" class="h-6 w-6 accent-neon-zielony\" checked />
+          <input
+            type="radio"
+            class="h-6 w-6 accent-neon-zielony\n[m]"
+            checked
+          />
           <label for="" class="flex-1 ml-3 text-base">Ohne Montage</label>
           <span class="font-bold text-2xl">1 599€</span>
         </div>

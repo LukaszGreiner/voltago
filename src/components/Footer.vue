@@ -4,7 +4,7 @@ import FooterNav from "./Footer/FooterNav.vue";
 
 <template>
   <!-- Footer -->
-  <footer class="pt-10 flex flex-col items-left justify-center">
+  <footer id="contact" class="pt-10 flex flex-col items-left justify-center">
     <div
       class="px-4 min-[1300px]:px-20 lg:flex lg:flex-row-reverse lg:justify-end"
     >

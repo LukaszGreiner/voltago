@@ -1,6 +1,5 @@
 <script setup>
 import ScooterCard from "./ScooterCard.vue";
-import ScooterCard2 from "../utils/ScooterCard2.vue";
 </script>
 
 <template>
@@ -14,13 +13,6 @@ import ScooterCard2 from "../utils/ScooterCard2.vue";
       alt="ZX-500 electric scooter"
     />
     <ScooterCard
-      name="Elektro-Roller"
-      model="DJ03-V55"
-      image="src/assets/img/scooter-small-2.png"
-      alt="DJ03-V55 electric scooter"
-      quote="BVB und Arminia Fans schätzen ihn sehr!"
-    />
-    <ScooterCard2
       name="Elektro-Roller"
       model="DJ03-V55"
       image="src/assets/img/scooter-small-2.png"

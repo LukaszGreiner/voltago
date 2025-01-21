@@ -10,10 +10,10 @@ import ScooterTile from "./ScooterTile.vue";
 
   <div class="grid gap-14 my-14 md:flex mx-auto">
     <!-- Splines are hidden by CSS -->
-    <DashedSplineVertical
+    <dashed-spline-vertical
       class="absolute md:hidden left-1/2 -translate-x-1/2 -mt-16"
     />
-    <DashedSplineHorizontal class="hidden md:block absolute mt-[10.5rem]" />
+    <dashed-spline-horizontal class="hidden md:block absolute mt-[10.5rem]" />
 
     <ScooterTile
       text1="Bis 45 Km/h"

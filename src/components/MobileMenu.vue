@@ -1,45 +1,35 @@
 <script setup lang="ts">
-import BurgerBtnClose from "./icons/burger-btn-close.vue";
+import burgerBtnClose from "./icons/burger-btn-close.vue";
+const navItems = [
+  { label: "Wer wir sind", href: "#about" },
+  { label: "Modelle", href: "#models" },
+  { label: "Führerschein", href: "#drivinglicence" },
+  { label: "Optionen", href: "#options" },
+  { label: "Kontakt", href: "#contact" },
+];
 </script>
 
 <template>
   <Teleport to="body">
     <div
-      class="fixed inset-0 z-[99] h-screen md:max-h-[478px] w-full bg-neon-zielony-jasny-2 overflow-y-scroll"
+      class="fixed inset-0 z-[99] h-screen md:max-h-[478px] w-full bg-neon-zielony-jasny-2 overflow-y-auto"
     >
       <nav class="grid w-100 px-4 pt-4 md:px-12">
         <button @click="$emit('closeMenu')" class="flex ml-auto">
-          <BurgerBtnClose />
+          <burger-btn-close />
         </button>
         <menu class="text-base grid">
           <span
             class="border-dashed border-b-[1px] border-jasny-ciemny-zielen py-[21px]"
-          >
-          </span>
+          ></span>
           <li
+            v-for="item in navItems"
+            :key="item.label"
             class="border-dashed border-b-[1px] border-jasny-ciemny-zielen py-[21px]"
           >
-            <a href="#">Wer wir sind</a>
-          </li>
-          <li
-            class="border-dashed border-b-[1px] border-jasny-ciemny-zielen py-[21px]"
-          >
-            <a href="#">Modelle</a>
-          </li>
-          <li
-            class="border-dashed border-b-[1px] border-jasny-ciemny-zielen py-[21px]"
-          >
-            <a href="#">Führerschein</a>
-          </li>
-          <li
-            class="border-dashed border-b-[1px] border-jasny-ciemny-zielen py-[21px]"
-          >
-            <a href="#">Optionen</a>
-          </li>
-          <li
-            class="border-dashed border-b-[1px] border-jasny-ciemny-zielen py-[21px]"
-          >
-            <a href="#">Kontakt</a>
+            <a :href="item.href" @click="$emit('closeMenu')">
+              {{ item.label }}
+            </a>
           </li>
         </menu>
       </nav>

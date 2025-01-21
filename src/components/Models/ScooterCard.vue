@@ -25,7 +25,7 @@ defineProps({
 
 <template>
   <div
-    class="lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-7 flex flex-col bg-neon-zielony-jasny border rounded-md border-neon-zielony justify-between"
+    class="lg:w-[528px] md:min-h-[350px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-7 flex flex-col bg-neon-zielony-jasny border rounded-md border-neon-zielony justify-between"
   >
     <div
       v-if="quote"

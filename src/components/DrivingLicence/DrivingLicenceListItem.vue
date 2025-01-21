@@ -4,7 +4,7 @@ import MarkDone from "../icons/mark-done.vue";
 
 <template>
   <div class="flex">
-    <MarkDone />
+    <mark-done />
     <slot />
   </div>
 </template>

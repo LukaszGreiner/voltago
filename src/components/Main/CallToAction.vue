@@ -17,4 +17,5 @@ import Button from "../utils/Button.vue";
     </p>
     <Button>Elektroroller kaufen</Button>
   </div>
+  <!-- End of Call to action -->
 </template>

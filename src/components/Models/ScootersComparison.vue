@@ -109,12 +109,8 @@ const btnShowLess = ref(false);
                 :key="scooter.name"
                 class="pt-3 pb-6 even:pl-3 odd:pr-3 last:border-b-1 odd:border-r border-jasny-ciemny-zielen border-dashed"
               >
-                <template v-if="scooter.features[feature.key] === true">
-                  <MarkDone />
-                </template>
-                <template v-else>
-                  {{ scooter.features[feature.key] }}
-                </template>
+                <mark-done v-if="scooter.features[feature.key] === true" />
+                <span v-else> {{ scooter.features[feature.key] }}</span>
               </td>
             </tr>
           </template>
@@ -127,7 +123,8 @@ const btnShowLess = ref(false);
       btn-type="secondary"
       :arrow-up="btnShowLess"
       :arrow-down="btnShowMore"
-      >Spezifikation reduzieren</Button
     >
+      {{ btnShowMore ? "Spezifikation erweitern" : "Spezifikation reduzieren" }}
+    </Button>
   </div>
 </template>

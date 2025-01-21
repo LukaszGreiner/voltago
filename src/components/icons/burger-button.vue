@@ -4,7 +4,7 @@
       width="60"
       height="36"
       viewBox="0 0 60 36"
-      aria-label="Open menu"
+      aria-label="Open menu button"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
