@@ -9,7 +9,7 @@ export default {
         "tekst-ciemny-zielony": "#566E68",
         "jasny-ciemny-zielen": "#C6D1CE",
         "tlo-jasne": "#FEFAF7",
-        "tlo-ciemne": "#faf6f2",
+        "tlo-ciemne": "#FAF6F2",
         "tlo-ciemne-2": "#F4F0EB",
         "neon-zielony": "#00E500",
         "neon-zielony-jasny": "#F1F9EB",

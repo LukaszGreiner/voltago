@@ -109,7 +109,10 @@ const btnShowLess = ref(false);
                 :key="scooter.name"
                 class="pt-3 pb-6 even:pl-3 odd:pr-3 last:border-b-1 odd:border-r border-jasny-ciemny-zielen border-dashed"
               >
-                <mark-done v-if="scooter.features[feature.key] === true" />
+                <mark-done
+                  class="mx-auto"
+                  v-if="scooter.features[feature.key] === true"
+                />
                 <span v-else> {{ scooter.features[feature.key] }}</span>
               </td>
             </tr>

@@ -12,7 +12,7 @@ defineProps({
     type: String,
     default: "model",
   },
-  image: {
+  img: {
     type: String,
     default: "src/assets/img/scooter-small-1.png",
   },
@@ -56,7 +56,7 @@ const cardTypes = {
       <div class="flex flex-1">
         <img
           class="min-h-[120px] min-w-[120px] lg:h-[240px] lg:w-[250px]"
-          :src="image"
+          :src="img"
           :alt="alt"
         />
       </div>

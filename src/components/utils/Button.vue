@@ -32,14 +32,15 @@ defineProps({
   },
 });
 
-const btnBase =
-  "py-2 px-6 text-base font-bold rounded-[59px] flex justify-center";
+const btnBase = "py-2 px-6 text-base font-bold flex justify-center";
 
 const btnTypes = ref({
   // green
-  primary: `${btnBase} bg-ciemny-zielony text-tlo-jasne disabled:bg-jasny-ciemny-zielen`,
+  primary: `${btnBase} rounded-[59px] bg-ciemny-zielony text-tlo-jasne disabled:bg-jasny-ciemny-zielen`,
   // transparent with outline
-  secondary: `${btnBase} bg-tlo-jasne text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
+  secondary: `${btnBase} rounded-[59px] bg-tlo-jasne text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
+
+  tertiary: `${btnBase} border-b border-neon-zielony text-[16px] leading-[22.4px] font-[500] px-0`,
 });
 </script>
 

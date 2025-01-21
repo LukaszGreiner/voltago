@@ -7,16 +7,19 @@ import About from "./components/About.vue";
 import Models from "./components/Models.vue";
 import Footer from "./components/Footer.vue";
 import DrivingLicence from "./components/DrivingLicence.vue";
+import ShoppingProgressBar from "./components/Shopping/ShoppingProgressBar.vue";
+import ShoppingView1 from "./views/ShoppingView1.vue";
 
 const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <Header @openMenu="isMenuOpen = true" />
+  <ShoppingView1 />
+  <!-- <Header @openMenu="isMenuOpen = true" />
   <MobileMenu v-if="isMenuOpen" @closeMenu="isMenuOpen = false" />
   <Main />
   <DrivingLicence />
   <About />
   <Models />
-  <Footer />
+  <Footer /> -->
 </template>
