@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import RadioInput from "./RadioInput.vue";
+
 defineProps({
   cardType: {
     type: String,
@@ -26,7 +28,7 @@ defineProps({
 });
 
 const cardBase =
-  "lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-7 flex flex-col b border rounded-md justify-between";
+  "lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-4 flex flex-col b border rounded-md justify-between";
 
 const cardTypes = {
   primary: `${cardBase} border-neon-zielony bg-neon-zielony-jasny`,
@@ -42,44 +44,25 @@ const cardTypes = {
     >
       {{ quote }}
     </div>
-    <div class="flex mb-6">
-      <div
-        class="flex flex-1 flex-col justify-center lg:justify-end lg:pb-6 w-full"
-      >
-        <p class="text-lg leading-[26px] mb-2">
+    <div class="flex items-center justify-around mb-6">
+      <div class="">
+        <p class="text-[16px] leading-[140%]">
           {{ name }}
         </p>
-        <p class="text-2xl font-bold lg:text-[32px] lg:leading-[44px]">
+        <p class="text-[24px] leading-[132%] font-[500]">
           {{ model }}
         </p>
       </div>
-      <div class="flex flex-1">
-        <img
-          class="min-h-[120px] min-w-[120px] lg:h-[240px] lg:w-[250px]"
-          :src="img"
-          :alt="alt"
-        />
+      <div>
+        <img class="h-[96px] w-[96px]" :src="img" :alt="alt" />
       </div>
     </div>
     <div
       class="flex flex-col flex-1 order rounded-lg border border-dashed border-jasny-ciemny-zielen h-full w-full p-4"
     >
       <div class="flex flex-col gap-2">
-        <div class="flex">
-          <input
-            type="radio"
-            class="h-6 w-6 accent-neon-zielony\n[m]"
-            checked
-          />
-          <label for="" class="flex-1 ml-3 text-base">Ohne Montage</label>
-          <span class="font-bold text-2xl">1 599€</span>
-        </div>
-
-        <div class="flex">
-          <input type="radio" class="h-6 w-6" />
-          <label for="" class="flex-1 ml-3 text-base">Ohne Montage</label>
-          <span class="font-bold text-2xl">1 599€</span>
-        </div>
+        <RadioInput name="Ohne Montage" price="1 599 €" value="1 599" />
+        <RadioInput name="Inklusive Montage" price="1 665 €" value="1 665" />
       </div>
     </div>
   </div>
