@@ -40,7 +40,7 @@ const btnTypes = ref({
   // transparent with outline
   secondary: `${btnBase} rounded-[59px] bg-tlo-jasne text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
 
-  tertiary: `${btnBase} border-b border-neon-zielony text-[16px] leading-[22.4px] font-[500] px-0`,
+  tertiary: `font-[500] text-[16px] leading-[140%] border-b border-neon-zielony text-[16px] leading-[22.4px] font-[500] pb-1`,
 });
 </script>
 

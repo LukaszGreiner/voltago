@@ -11,7 +11,7 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
 <template>
   <div class="h-screen flex flex-col">
     <ShoppingHeader class="mb-4" />
-    <section class="grid place-items-center">
+    <section class="flex flex-col items-center">
       <h1 class="mb-2 font-[500] text-[28px] leading-10 tracking-[-0.03em]">
         Elektroroller kaufen
       </h1>
@@ -19,7 +19,7 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
     </section>
     <main class="flex-1 items-center flex-col flex mb-16 p-0">
       <section>
-        <h2 class="mb-4 text-[28px] leading-10">
+        <h2 class="mb-4 text-[18px] leading-[140%]">
           Wählen Sie den Elektroroller für Sie:
         </h2>
 
@@ -36,10 +36,14 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
             img="src/assets/img/scooter-small-2.png"
           />
         </div>
+        <div
+          class="border-b border-dashed border-jasny-ciemny-zielen h-1 w-auto mt-10"
+        ></div>
+        <ScootersComparison initialHeight="0" />
+        <Button class="mt-12 mr-auto px-0" btnType="tertiary" :arrow-left="true"
+          >Zurück zur Homepage</Button
+        >
       </section>
-      <Button btnType="tertiary" :arrow-left="true">Zurück zur Homepage</Button>
-
-      <!-- <ScootersComparison /> -->
     </main>
     <ShoppingFooter />
   </div>

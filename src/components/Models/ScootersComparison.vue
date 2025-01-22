@@ -3,6 +3,13 @@ import { ref } from "vue";
 import MarkDone from "../icons/mark-done.vue";
 import Button from "../utils/Button.vue";
 
+const props = defineProps({
+  initialHeight: {
+    type: [Number, String],
+    default: 750,
+  },
+});
+
 const scootersTable = [
   {
     name: "ZX-500",
@@ -64,70 +71,67 @@ const features = [
 ];
 
 function toggleTable() {
-  tableHeight.value = tableHeight.value === "h-full" ? "h-[750px]" : "h-full";
+  tableHeight.value =
+    tableHeight.value === "h-100" ? initialHeightClass : "h-100";
   btnShowMore.value = !btnShowMore.value;
   btnShowLess.value = !btnShowLess.value;
 }
 
-const tableHeight = ref("h-[750px]");
+const initialHeightClass = `h-[${props.initialHeight}px]`;
+const tableHeight = ref(initialHeightClass);
 const btnShowMore = ref(true);
 const btnShowLess = ref(false);
 </script>
 
 <template>
-  <div class="grid justify-center mt-12">
-    <div class="mb-12 overflow-hidden" :class="tableHeight">
-      <table>
-        <thead>
-          <tr class="text-lg leading-[26px] font-bold">
-            <!-- Scooter Model  -->
+  <!-- Scooter Comparison -->
+  <div class="overflow-hidden mb-12" :class="tableHeight">
+    <table>
+      <thead>
+        <tr class="text-lg leading-[26px] font-bold">
+          <!-- Scooter Model  -->
 
-            <th
+          <th v-for="scooter in scootersTable" :key="scooter.name" class="pb-4">
+            <p class="mb-2 text-center text-lg leading-7 font-normal">
+              Elektro-Roller
+            </p>
+            {{ scooter.name }}
+          </th>
+        </tr>
+      </thead>
+      <tbody class="text-center text-[15px] leading-[22px]">
+        <!-- Scooter feature -->
+        <template v-for="(feature, index) in features" :key="index">
+          <tr class="bg-tlo-ciemne-2">
+            <td :colspan="scootersTable.length" class="px-4 py-1">
+              {{ feature.name }}
+            </td>
+          </tr>
+          <tr class="mb-3 pb-3">
+            <!-- Feature description -->
+            <td
               v-for="scooter in scootersTable"
               :key="scooter.name"
-              class="pb-4"
+              class="pt-3 pb-6 even:pl-3 odd:pr-3 last:border-b-1 odd:border-r border-jasny-ciemny-zielen border-dashed"
             >
-              <p class="mb-2 text-center text-lg leading-7 font-normal">
-                Elektro-Roller
-              </p>
-              {{ scooter.name }}
-            </th>
+              <mark-done
+                class="mx-auto"
+                v-if="scooter.features[feature.key] === true"
+              />
+              <span v-else> {{ scooter.features[feature.key] }}</span>
+            </td>
           </tr>
-        </thead>
-        <tbody class="text-center text-[15px] leading-[22px]">
-          <!-- Scooter feature -->
-          <template v-for="(feature, index) in features" :key="index">
-            <tr class="bg-tlo-ciemne-2">
-              <td :colspan="scootersTable.length" class="px-4 py-1">
-                {{ feature.name }}
-              </td>
-            </tr>
-            <tr class="mb-3 pb-3">
-              <!-- Feature description -->
-              <td
-                v-for="scooter in scootersTable"
-                :key="scooter.name"
-                class="pt-3 pb-6 even:pl-3 odd:pr-3 last:border-b-1 odd:border-r border-jasny-ciemny-zielen border-dashed"
-              >
-                <mark-done
-                  class="mx-auto"
-                  v-if="scooter.features[feature.key] === true"
-                />
-                <span v-else> {{ scooter.features[feature.key] }}</span>
-              </td>
-            </tr>
-          </template>
-        </tbody>
-      </table>
-    </div>
-    <Button
-      @click="toggleTable"
-      class="mx-auto"
-      btn-type="secondary"
-      :arrow-up="btnShowLess"
-      :arrow-down="btnShowMore"
-    >
-      {{ btnShowMore ? "Spezifikation erweitern" : "Spezifikation reduzieren" }}
-    </Button>
+        </template>
+      </tbody>
+    </table>
   </div>
+  <Button
+    @click="toggleTable"
+    class="mx-auto"
+    btn-type="secondary"
+    :arrow-up="btnShowLess"
+    :arrow-down="btnShowMore"
+  >
+    {{ btnShowMore ? "Spezifikation erweitern" : "Spezifikation reduzieren" }}
+  </Button>
 </template>
