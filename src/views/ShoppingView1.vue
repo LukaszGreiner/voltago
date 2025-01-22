@@ -40,7 +40,10 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
           class="border-b border-dashed border-jasny-ciemny-zielen h-1 w-auto mt-10"
         ></div>
         <ScootersComparison initialHeight="0" />
-        <Button class="mt-12 mr-auto px-0" btnType="tertiary" :arrow-left="true"
+        <Button
+          class="mt-12 mr-auto px-0 text-[16px]"
+          btnType="tertiary"
+          :arrow-left="true"
           >Zurück zur Homepage</Button
         >
       </section>

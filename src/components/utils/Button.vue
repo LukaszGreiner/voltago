@@ -19,12 +19,12 @@ defineProps({
     default: false,
   },
   arrowUp: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "none", // options: "before", "after", "none"
   },
   arrowDown: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "none", // options: "before", "after", "none"
   },
   disabled: {
     type: Boolean,
@@ -40,7 +40,7 @@ const btnTypes = ref({
   // transparent with outline
   secondary: `${btnBase} rounded-[59px] bg-tlo-jasne text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
 
-  tertiary: `font-[500] text-[16px] leading-[140%] border-b border-neon-zielony text-[16px] leading-[22.4px] font-[500] pb-1`,
+  tertiary: `font-[500] leading-[140%] border-b border-neon-zielony text-[16px] leading-[22.4px] font-[500] pb-1 h-[25px]`,
 });
 </script>
 
@@ -48,10 +48,12 @@ const btnTypes = ref({
   <button :class="btnTypes[btnType]" :disabled="disabled">
     <div class="flex place-items-center gap-2">
       <ArrowLeft v-if="arrowLeft" />
+      <ArrowUp v-if="arrowUp === 'before'" />
+      <ArrowDown v-if="arrowDown === 'before'" />
       <slot />
+      <ArrowDown v-if="arrowDown === 'after'" />
+      <ArrowUp v-if="arrowUp === 'after'" />
       <ArrowRight v-if="arrowRight" />
-      <ArrowDown v-if="arrowDown" />
-      <ArrowUp v-if="arrowUp" />
     </div>
   </button>
 </template>
