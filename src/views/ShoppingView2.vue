@@ -4,15 +4,19 @@ import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingProgressBar from "@/components/Shopping/ShoppingProgressBar.vue";
 import ShoppingProgressSection from "@/components/Shopping/ShoppingProgressSection.vue";
 import ToggleCard from "@/components/Shopping/ToggleCard.vue";
+import Button from "@/components/utils/Button.vue";
+import { ref } from "vue";
 
 const scooterAccessories = [
-  {},
   {
     name: "BE – Batterie-Erweiterung",
     minPrice: "699",
+    isChecked: false, // toggle button state
     accordionText: "lorem ipsum dolor sit ament",
+    accordionOpen: false,
     priceWithAssembly: "699",
     priceWithoutAssembly: "714",
+    optionSelected: "2", // '1' or '2' sets radio button checked as default
   },
   {
     name: "CB - Sitzbank Farbe abweichend (ggf. Lieferzeit - Lieferung schwarz / Tausch später)",
@@ -57,14 +61,16 @@ const scooterAccessories = [
     accordionText: "lorem ipsum dolor sit ament",
   },
 ];
+
+const totalPrice = ref(0);
 </script>
 
 <template>
   <ShoppingHeader />
   <ShoppingProgressSection>
-    <ShoppingProgressBar />
+    <ShoppingProgressBar currentStep="2" />
   </ShoppingProgressSection>
-  <section class="grid gap-4">
+  <section class="grid grid-cols-1 items-center md:grid-cols-2 gap-4 mb-16">
     <ToggleCard
       v-for="(accessory, index) in scooterAccessories"
       :key="index"
@@ -78,5 +84,8 @@ const scooterAccessories = [
       :optionSelected="accessory.optionSelected"
     />
   </section>
-  <ShoppingFooter />
+  <Button class="ml-4 mb-16" btnType="tertiary" :arrowLeft="true"
+    >Zurück</Button
+  >
+  <ShoppingFooter :totalPrice="totalPrice" />
 </template>
