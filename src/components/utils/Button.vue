@@ -19,11 +19,11 @@ defineProps({
     default: false,
   },
   arrowUp: {
-    type: String,
+    type: [String, Boolean],
     default: "none", // options: "before", "after", "none"
   },
   arrowDown: {
-    type: String,
+    type: [String, Boolean],
     default: "none", // options: "before", "after", "none"
   },
   disabled: {
@@ -40,12 +40,12 @@ const btnTypes = ref({
   // transparent with outline
   secondary: `${btnBase} rounded-[59px] bg-tlo-jasne text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
 
-  tertiary: `font-[500] leading-[140%] border-b border-neon-zielony text-[16px] leading-[22.4px] font-[500] pb-1 h-[25px]`,
+  tertiary: `font-[500] border-b border-neon-zielony pb-1 h-[25px]`,
 });
 </script>
 
 <template>
-  <button :class="btnTypes[btnType]" :disabled="disabled">
+  <button class="" :class="btnTypes[btnType]" :disabled="disabled">
     <div class="flex place-items-center gap-2">
       <ArrowLeft v-if="arrowLeft" />
       <ArrowUp v-if="arrowUp === 'before'" />
