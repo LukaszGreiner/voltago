@@ -1,23 +1,19 @@
 <script setup lang="ts">
-import ScooterCard from "@/components/Models/ScooterCard.vue";
 import ScootersComparison from "@/components/Models/ScootersComparison.vue";
 import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
-import ShoppingProgressBar from "@/components/Shopping/ShoppingProgressBar.vue";
+import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import Button from "@/components/utils/Button.vue";
 import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
 </script>
 
 <template>
-  <div class="h-screen flex flex-col">
-    <ShoppingHeader class="mb-4" />
-    <section class="flex flex-col items-center">
-      <h1 class="mb-2 font-[500] text-[28px] leading-10 tracking-[-0.03em]">
-        Elektroroller kaufen
-      </h1>
-      <ShoppingProgressBar class="mb-8" />
-    </section>
-    <main class="flex-1 items-center flex-col flex mb-16 p-0">
+  <ShoppingLayout>
+    <template #header>
+      <ShoppingHeader currentStep="1" />
+    </template>
+
+    <template #main>
       <section>
         <h2 class="mb-4 text-[18px] leading-[140%]">
           Wählen Sie den Elektroroller für Sie:
@@ -41,13 +37,16 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
         ></div>
         <ScootersComparison initialHeight="0" />
         <Button
-          class="mt-12 mr-auto px-0 text-[16px]"
+          class="mt-12 mb-16 mr-auto px-0 text-[16px]"
           btnType="tertiary"
           :arrow-left="true"
           >Zurück zur Homepage</Button
         >
       </section>
-    </main>
-    <ShoppingFooter />
-  </div>
+    </template>
+
+    <template #footer>
+      <ShoppingFooter :total-price="0" />
+    </template>
+  </ShoppingLayout>
 </template>

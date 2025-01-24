@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Button from "../utils/Button.vue";
 
 defineProps({
@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <footer
-    class="h-16 bg-tlo-jasne flex items-center justify-between px-4 w-full shadow-[0px_-4px_16px_0px_#00000014]"
+    class="h-16 bg-tlo-jasne flex items-center justify-between px-4 w-full shadow-[0px_-4px_16px_0px_#00000014] fixed bottom-0"
   >
     <p class="font-bold text-[12px] leading-[16.8px]">
       Zu zahlender Betrag:

@@ -10,13 +10,17 @@ import DrivingLicence from "./components/DrivingLicence.vue";
 import ShoppingProgressBar from "./components/Shopping/ShoppingProgressBar.vue";
 import ShoppingView1 from "./views/ShoppingView1.vue";
 import ShoppingView2 from "./views/ShoppingView2.vue";
+import ShoppingView3 from "./views/ShoppingView3.vue";
+import ShoppingView4 from "./views/ShoppingView4.vue";
 
 const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <ShoppingView2 />
   <!-- <ShoppingView1 /> -->
+  <ShoppingView2 />
+  <!-- <ShoppingView3 /> -->
+  <!-- <ShoppingView4 /> -->
   <!-- <Header @openMenu="isMenuOpen = true" />
   <MobileMenu v-if="isMenuOpen" @closeMenu="isMenuOpen = false" />
   <Main />

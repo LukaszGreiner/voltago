@@ -51,8 +51,8 @@ const btnTypes = ref({
       <ArrowUp v-if="arrowUp === 'before'" />
       <ArrowDown v-if="arrowDown === 'before'" />
       <slot />
-      <ArrowDown v-if="arrowDown === 'after'" />
-      <ArrowUp v-if="arrowUp === 'after'" />
+      <ArrowDown v-if="arrowDown === 'after' || arrowDown === true" />
+      <ArrowUp v-if="arrowUp === 'after' || arrowUp === true" />
       <ArrowRight v-if="arrowRight" />
     </div>
   </button>

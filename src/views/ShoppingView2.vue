@@ -1,8 +1,7 @@
-<script setup lang="ts">
+<script setup>
 import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
-import ShoppingProgressBar from "@/components/Shopping/ShoppingProgressBar.vue";
-import ShoppingProgressSection from "@/components/Shopping/ShoppingProgressSection.vue";
+import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import ToggleCard from "@/components/Shopping/ToggleCard.vue";
 import Button from "@/components/utils/Button.vue";
 import { ref } from "vue";
@@ -61,31 +60,41 @@ const scooterAccessories = [
     accordionText: "lorem ipsum dolor sit ament",
   },
 ];
-
-const totalPrice = ref(0);
 </script>
 
 <template>
-  <ShoppingHeader />
-  <ShoppingProgressSection>
-    <ShoppingProgressBar currentStep="2" />
-  </ShoppingProgressSection>
-  <section class="grid grid-cols-1 items-center md:grid-cols-2 gap-4 mb-16">
-    <ToggleCard
-      v-for="(accessory, index) in scooterAccessories"
-      :key="index"
-      :name="accessory.name"
-      :minPrice="accessory.minPrice"
-      :isChecked="accessory.isChecked"
-      :priceWithoutAssembly="accessory.priceWithoutAssembly"
-      :priceWithAssembly="accessory.priceWithAssembly"
-      :accordionText="accessory.accordionText"
-      :accordionOpen="accessory.accordionOpen"
-      :optionSelected="accessory.optionSelected"
-    />
-  </section>
-  <Button class="ml-4 mb-16" btnType="tertiary" :arrowLeft="true"
-    >Zurück</Button
-  >
-  <ShoppingFooter :totalPrice="totalPrice" />
+  <ShoppingLayout>
+    <template #header>
+      <ShoppingHeader currentStep="2" />
+    </template>
+
+    <template #main>
+      <section
+        class="grid grid-cols-1 justify-items-center md:grid-cols-2 gap-4"
+      >
+        <ToggleCard
+          v-for="(accessory, index) in scooterAccessories"
+          :key="index"
+          :name="accessory.name"
+          :minPrice="accessory.minPrice"
+          :isChecked="accessory.isChecked"
+          :priceWithoutAssembly="accessory.priceWithoutAssembly"
+          :priceWithAssembly="accessory.priceWithAssembly"
+          :accordionText="accessory.accordionText"
+          :accordionOpen="accessory.accordionOpen"
+          :optionSelected="accessory.optionSelected"
+        />
+      </section>
+      <Button
+        class="mt-12 mb-16 mr-auto px-0 text-[16px]"
+        btnType="tertiary"
+        :arrow-left="true"
+        >Zurück</Button
+      >
+    </template>
+
+    <template #footer>
+      <ShoppingFooter :total-price="0" />
+    </template>
+  </ShoppingLayout>
 </template>
