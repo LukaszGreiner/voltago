@@ -10,15 +10,16 @@
     />
     <ul class="space-y-3 mb-6">
       <li class="flex justify-between">
-        <p class="text-[15px] leading-[21px] font-[500]">
-          lektro-Roller ZX-500 - inkl. Montage
+        <p class="text-[15px] leading-[21px] font-[500] text-balance">
+          Elektro-Roller ZX-500 - inkl.<br />
+          Montage
         </p>
         <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"
           >1 665 €</span
         >
       </li>
       <li class="flex justify-between">
-        <p class="text-[15px] leading-[21px] font-[500]">
+        <p class="text-[15px] leading-[21px] font-[500] text-balance">
           BE – Batterie-Erweiterung - ohne Montage
         </p>
         <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"
@@ -26,7 +27,7 @@
         >
       </li>
       <li class="flex justify-between">
-        <p class="text-[15px] leading-[21px] font-[500]">
+        <p class="text-[15px] leading-[21px] font-[500] text-balance">
           CB - Sitzbank Farbe abweichend - inkl. Montage
         </p>
         <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"

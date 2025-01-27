@@ -7,8 +7,9 @@ body {
   color: #003e30;
   background-color: #fefaf7;
 
-  font-family: DMSans, sans-serif;
+  font-family: DMSans;
 }
+
 html {
   scroll-behavior: smooth;
 }
