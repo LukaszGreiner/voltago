@@ -2,6 +2,7 @@
 import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
+import SummaryCard from "@/components/Shopping/SummaryCard.vue";
 </script>
 
 <template>
@@ -10,7 +11,7 @@ import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
       <ShoppingHeader currentStep="4" />
     </template>
 
-    <template #main> </template>
+    <template #main> <SummaryCard img="" data:/> </template>
 
     <template #footer>
       <ShoppingFooter :total-price="0" />

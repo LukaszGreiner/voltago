@@ -7,7 +7,7 @@ import ShoppingProgressSection from "./ShoppingProgressSection.vue";
   <div class="flex flex-col h-screen">
     <!-- <ShoppingHeader currentStep="4" /> -->
     <slot name="header"></slot>
-    <main class="flex flex-col flex-1 pb-16 mb-16 justify-center items-center">
+    <main class="flex flex-col flex-1 pb-16 mb-16 items-center">
       <slot name="main"></slot>
     </main>
     <slot name="footer"></slot>
