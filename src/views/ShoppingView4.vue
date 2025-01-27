@@ -4,7 +4,7 @@ import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import SummaryCard from "@/components/Shopping/SummaryCard.vue";
 import SummaryDetails from "@/components/Shopping/SummaryDetails.vue";
-import Button from "@/components/utils/Button.vue";
+import TermsAndConditions from "@/components/Shopping/TermsAndConditions.vue";
 
 import { ref } from "vue";
 
@@ -33,6 +33,7 @@ const toggleEdit = () => {
     <template #main>
       <SummaryCard />
       <SummaryDetails />
+      <TermsAndConditions />
     </template>
 
     <template #footer>

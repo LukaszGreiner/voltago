@@ -46,7 +46,7 @@ const btnTypes = ref({
 
 <template>
   <button class="" :class="btnTypes[btnType]" :disabled="disabled">
-    <div class="flex place-items-center gap-2">
+    <span class="flex place-items-center gap-2">
       <ArrowLeft v-if="arrowLeft" />
       <ArrowUp v-if="arrowUp === 'before'" />
       <ArrowDown v-if="arrowDown === 'before'" />
@@ -54,6 +54,6 @@ const btnTypes = ref({
       <ArrowDown v-if="arrowDown === 'after' || arrowDown === true" />
       <ArrowUp v-if="arrowUp === 'after' || arrowUp === true" />
       <ArrowRight v-if="arrowRight" />
-    </div>
+    </span>
   </button>
 </template>

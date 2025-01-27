@@ -20,12 +20,12 @@ const isMenuOpen = ref(false);
   <!-- <ShoppingView1 /> -->
   <!-- <ShoppingView2 /> -->
   <!-- <ShoppingView3 /> -->
-  <ShoppingView4 />
-  <!-- <Header @openMenu="isMenuOpen = true" />
+  <!-- <ShoppingView4 /> -->
+  <Header @openMenu="isMenuOpen = true" />
   <MobileMenu v-if="isMenuOpen" @closeMenu="isMenuOpen = false" />
   <Main />
   <DrivingLicence />
   <About />
   <Models />
-  <Footer /> -->
+  <Footer />
 </template>

@@ -26,7 +26,7 @@ const props = defineProps({
   <label class="flex items-center space-x-3">
     <!-- outer circle -->
     <div
-      class="z-1 flex h-6 w-6 items-center justify-center rounded-full border border-black"
+      class="z-1 flex h-6 w-6 items-center justify-center rounded-full border border-ciemny-zielony"
     >
       <input
         type="radio"
