@@ -37,14 +37,15 @@ const cardTypes = {
 </script>
 
 <template>
-  <div :class="cardTypes[cardType]">
+  <div :class="cardTypes[cardType]" class="h-[256px] w-[328px]">
     <div
       v-if="quote"
       class="bg-tekst-ciemny-zielony text-tlo-jasne rounded-r-lg -ml-[29px] p-2 pl-[10px] -mt-2 mb-[3px] text-sm leading-[18px] lg:w-[280px]"
     >
       {{ quote }}
     </div>
-    <div class="flex items-center justify-around mb-6">
+    <!-- mb-6 => mb-4 -->
+    <div class="flex items-center justify-around mb-4">
       <div class="">
         <p class="text-[16px] leading-[140%]">
           {{ name }}
@@ -58,11 +59,21 @@ const cardTypes = {
       </div>
     </div>
     <div
-      class="flex flex-col flex-1 order rounded-lg border border-dashed border-jasny-ciemny-zielen h-full w-full p-4"
+      class="pb-3 flex flex-col flex-1 order rounded-lg border border-dashed border-jasny-ciemny-zielen h-full w-full p-4"
     >
       <div class="flex flex-col gap-2">
-        <RadioInput name="Ohne Montage" price="1 599 €" value="1 599" />
-        <RadioInput name="Inklusive Montage" price="1 665 €" value="1 665" />
+        <RadioInput
+          option="Ohne Montage"
+          name="options"
+          price="1 599"
+          value="1 599"
+        />
+        <RadioInput
+          option="Inklusive Montage"
+          name="options"
+          price="1 665"
+          value="1 665"
+        />
       </div>
     </div>
   </div>

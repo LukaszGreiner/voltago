@@ -6,7 +6,7 @@ import Button from "../utils/Button.vue";
 const props = defineProps({
   initialHeight: {
     type: [Number, String],
-    default: 750,
+    default: 0,
   },
 });
 

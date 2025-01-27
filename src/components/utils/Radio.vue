@@ -22,7 +22,7 @@ const props = defineProps({
 
 <template>
   <!-- Custom input  -->
-  <!-- space-x-2 => space-x-3 -->
+  <!-- space-x-2 -> space-x-3 -->
   <label class="flex items-center space-x-3">
     <!-- outer circle -->
     <div

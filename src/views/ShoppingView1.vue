@@ -14,7 +14,7 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
     </template>
 
     <template #main>
-      <section>
+      <div>
         <h2 class="mb-4 text-[18px] leading-[140%]">
           Wählen Sie den Elektroroller für Sie:
         </h2>
@@ -35,14 +35,14 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
         <div
           class="border-b border-dashed border-jasny-ciemny-zielen h-1 w-auto mt-10"
         ></div>
-        <ScootersComparison initialHeight="0" />
+        <ScootersComparison />
         <Button
           class="mt-12 mb-16 mr-auto px-0 text-[16px]"
           btnType="tertiary"
           :arrow-left="true"
           >Zurück zur Homepage</Button
         >
-      </section>
+      </div>
     </template>
 
     <template #footer>

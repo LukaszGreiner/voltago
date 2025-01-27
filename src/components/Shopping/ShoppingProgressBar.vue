@@ -28,6 +28,7 @@ defineProps({
             : 'uncompleted'
         "
         number="1"
+        name="Ihr Elektroroller"
       />
       <ProgressTile
         :state="
@@ -38,6 +39,7 @@ defineProps({
             : 'uncompleted'
         "
         number="2"
+        name="Zubehör für Elektroroller"
       />
       <ProgressTile
         :state="
@@ -48,6 +50,7 @@ defineProps({
             : 'uncompleted'
         "
         number="3"
+        name="Daten, Lieferung und Zahlung"
       />
       <ProgressTile
         :state="
@@ -58,6 +61,7 @@ defineProps({
             : 'uncompleted'
         "
         number="4"
+        name="Übersicht"
       />
     </div>
   </div>

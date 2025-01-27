@@ -6,6 +6,9 @@ defineProps({
     type: String,
     default: "uncompleted",
   },
+  name: {
+    String,
+  },
   number: {
     type: String,
     default: "0",
@@ -32,9 +35,9 @@ const styles = {
         <span v-else>{{ number }}</span>
       </div>
       <!-- Text -->
-      <span class="text-[11px] leading-[15.4px] font-[400] text-center mt-1"
-        ><slot
-      /></span>
+      <span class="text-[11px] leading-[15.4px] font-[400] text-center mt-1">{{
+        name
+      }}</span>
     </div>
   </div>
 </template>
