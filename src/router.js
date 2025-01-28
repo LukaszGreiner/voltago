@@ -1,4 +1,8 @@
-import { createMemoryHistory, createRouter } from "vue-router";
+import {
+  createMemoryHistory,
+  createRouter,
+  createWebHistory,
+} from "vue-router";
 import ShoppingView1 from "./views/ShoppingView1.vue";
 import ShoppingView2 from "./views/ShoppingView2.vue";
 import ShoppingView3 from "./views/ShoppingView3.vue";
@@ -16,7 +20,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 });
 

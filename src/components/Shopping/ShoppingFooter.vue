@@ -17,6 +17,6 @@ defineProps({
       Zu zahlender Betrag:
       <span class="text-[15px] leading-[21px]">{{ totalPrice }} €</span>
     </p>
-    <Btn class="h-10 w-[108px] my-5" :arrowRight="true">Weiter</Btn>
+    <Btn class="h-10 w-[108px] my-5" arrowRight="after">Weiter</Btn>
   </footer>
 </template>
