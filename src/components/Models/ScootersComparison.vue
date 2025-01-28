@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import MarkDone from "../icons/mark-done.vue";
-import Button from "../utils/Button.vue";
+import Btn from "../utils/Btn.vue";
 
 const props = defineProps({
   initialHeight: {
@@ -125,7 +125,7 @@ const btnShowLess = ref(false);
       </tbody>
     </table>
   </div>
-  <Button
+  <Btn
     @click="toggleTable"
     class="mx-auto"
     btn-type="secondary"
@@ -133,5 +133,5 @@ const btnShowLess = ref(false);
     :arrow-down="btnShowMore"
   >
     {{ btnShowMore ? "Spezifikation erweitern" : "Spezifikation reduzieren" }}
-  </Button>
+  </Btn>
 </template>

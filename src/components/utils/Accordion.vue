@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import Button from "./Button.vue";
+import Btn from "./Btn.vue";
 
 const props = defineProps({
   isOpen: {
@@ -23,13 +23,13 @@ const accordionOpen = ref(props.isOpen);
         {{ text }}
       </p>
     </div>
-    <Button
+    <Btn
       @click="accordionOpen = !accordionOpen"
       class="text-[15px] leading-[140%]"
       btn-type="tertiary"
       :arrowDown="!accordionOpen && 'after'"
       :arrowUp="accordionOpen && 'after'"
-      >{{ accordionOpen ? "Zusammenbruch" : "Einzelheiten" }}</Button
+      >{{ accordionOpen ? "Zusammenbruch" : "Einzelheiten" }}</Btn
     >
   </div>
 </template>

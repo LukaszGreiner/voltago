@@ -1,5 +1,5 @@
 <script setup>
-import Button from "../utils/Button.vue";
+import Btn from "../utils/Btn.vue";
 
 defineProps({
   totalPrice: {
@@ -17,6 +17,6 @@ defineProps({
       Zu zahlender Betrag:
       <span class="text-[15px] leading-[21px]">{{ totalPrice }} €</span>
     </p>
-    <Button class="h-10 w-[108px] my-5" :arrowRight="true">Weiter</Button>
+    <Btn class="h-10 w-[108px] my-5" :arrowRight="true">Weiter</Btn>
   </footer>
 </template>

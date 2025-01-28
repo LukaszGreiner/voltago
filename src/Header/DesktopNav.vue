@@ -1,5 +1,5 @@
 <script setup>
-import Button from "@/components/utils/Button.vue";
+import Btn from "@/components/utils/Btn.vue";
 
 const navItems = [
   { label: "Wer wir sind", href: "#about" },

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from "../utils/Button.vue";
+import Btn from "../utils/Btn.vue";
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import Button from "../utils/Button.vue";
       Auch wenn du im 14. Stock wohnst bist du jetzt mobil! Du lädst dein Akku
       in deiner Wohnung und mußt nicht an eine Ladesäule!
     </p>
-    <Button>Elektroroller kaufen</Button>
+    <Btn>Elektroroller kaufen</Btn>
   </div>
   <!-- End of Call to action -->
 </template>

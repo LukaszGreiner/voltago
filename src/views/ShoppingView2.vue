@@ -3,14 +3,14 @@ import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import ToggleCard from "@/components/Shopping/ToggleCard.vue";
-import Button from "@/components/utils/Button.vue";
+import Btn from "@/components/utils/Btn.vue";
 import { ref } from "vue";
 
 const scooterAccessories = [
   {
     name: "BE – Batterie-Erweiterung",
     minPrice: "699",
-    isChecked: false, // toggle button state
+    isChecked: false, // toggle Button state
     accordionText: "lorem ipsum dolor sit ament",
     accordionOpen: false,
     priceWithAssembly: "699",
@@ -85,11 +85,11 @@ const scooterAccessories = [
           :optionSelected="accessory.optionSelected"
         />
       </section>
-      <Button
+      <Btn
         class="mt-12 mb-16 mr-auto px-0 text-[16px]"
         btnType="tertiary"
         :arrow-left="true"
-        >Zurück</Button
+        >Zurück</Btn
       >
     </template>
 

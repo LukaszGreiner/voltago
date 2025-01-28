@@ -1,5 +1,5 @@
 <script setup>
-import Button from "@/components/utils/Button.vue";
+import Btn from "@/components/utils/Btn.vue";
 
 import { ref } from "vue";
 
@@ -25,9 +25,9 @@ const toggleEdit = () => {
     <div>
       <div class="flex justify-between w-full">
         <h2 class="mb-2">Ihre Daten</h2>
-        <Button btn-type="tertiary" @click="toggleEdit">{{
+        <Btn btn-type="tertiary" @click="toggleEdit">{{
           isEditable ? "Speichern" : "Ändern"
-        }}</Button>
+        }}</Btn>
       </div>
 
       <div
@@ -98,9 +98,9 @@ const toggleEdit = () => {
     <div>
       <div class="flex justify-between w-full">
         <h2 class="mb-2">Art der Zustellung</h2>
-        <Button btn-type="tertiary" @click="toggleEdit">{{
+        <Btn btn-type="tertiary" @click="toggleEdit">{{
           isEditable ? "Speichern" : "Ändern"
-        }}</Button>
+        }}</Btn>
       </div>
 
       <div
@@ -126,9 +126,9 @@ const toggleEdit = () => {
     <div>
       <div class="flex justify-between w-full">
         <h2 class="mb-2">Art der Zahlung</h2>
-        <Button btn-type="tertiary" @click="toggleEdit">{{
+        <Btn btn-type="tertiary" @click="toggleEdit">{{
           isEditable ? "Speichern" : "Ändern"
-        }}</Button>
+        }}</Btn>
       </div>
 
       <div
