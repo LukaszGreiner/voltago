@@ -1,5 +1,6 @@
-<script setup lang="ts">
+<script setup>
 import Btn from "../utils/Btn.vue";
+import GoShoppingBtn from "../utils/GoShoppingBtn.vue";
 </script>
 
 <template>
@@ -15,7 +16,10 @@ import Btn from "../utils/Btn.vue";
       Auch wenn du im 14. Stock wohnst bist du jetzt mobil! Du lädst dein Akku
       in deiner Wohnung und mußt nicht an eine Ladesäule!
     </p>
-    <Btn>Elektroroller kaufen</Btn>
+    <!-- <Btn>
+      <RouterLink to="/shoppingview1">Elektroroller kaufen</RouterLink>
+    </Btn> -->
+    <GoShoppingBtn />
   </div>
   <!-- End of Call to action -->
 </template>

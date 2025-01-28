@@ -13,21 +13,12 @@ import ShoppingView2 from "./views/ShoppingView2.vue";
 import ShoppingView3 from "./views/ShoppingView3.vue";
 import ShoppingView4 from "./views/ShoppingView4.vue";
 import TestingComponentsView from "./views/TestingComponentsView.vue";
+import DebugNav from "@/components/utils/DebugNav.vue";
 
 const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <TestingComponentsView />
-  <!-- <ShoppingView1 /> -->
-  <!-- <ShoppingView2 /> -->
-  <!-- <ShoppingView3 /> -->
-  <!-- <ShoppingView4 /> -->
-  <!-- <Header @openMenu="isMenuOpen = true" />
-  <MobileMenu v-if="isMenuOpen" @closeMenu="isMenuOpen = false" />
-  <Main />
-  <DrivingLicence />
-  <About />
-  <Models />
-  <Footer /> -->
+  <DebugNav />
+  <RouterView />
 </template>
