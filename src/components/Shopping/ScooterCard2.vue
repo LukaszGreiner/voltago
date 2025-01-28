@@ -1,11 +1,7 @@
-<script setup lang="ts">
-import RadioInput from "./RadioInput.vue";
+<script setup>
+import RadioInput from "../utils/RadioInput.vue";
 
 defineProps({
-  cardType: {
-    type: String,
-    default: "secondary",
-  },
   name: {
     type: String,
     default: "name",
@@ -14,7 +10,7 @@ defineProps({
     type: String,
     default: "model",
   },
-  img: {
+  src: {
     type: String,
     default: "src/assets/img/scooter-small-1.png",
   },
@@ -22,28 +18,22 @@ defineProps({
     type: String,
     default: "Scooter",
   },
-  quote: {
+  priceWithAssembly: {
     type: String,
+    default: "???",
+  },
+  priceWithoutAssembly: {
+    type: String,
+    default: "???",
   },
 });
 
-const cardBase =
-  "lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-4 flex flex-col b border rounded-md justify-between";
-
-const cardTypes = {
-  primary: `${cardBase} border-neon-zielony bg-neon-zielony-jasny`,
-  secondary: `${cardBase} bg-tlo-ciemne border-jasny-ciemny-zielen`,
-};
+const styles =
+  "lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-4 flex flex-col b border rounded-md justify-between bg-tlo-ciemne border-jasny-ciemny-zielen";
 </script>
 
 <template>
-  <div :class="cardTypes[cardType]" class="h-[256px] w-[328px]">
-    <div
-      v-if="quote"
-      class="bg-tekst-ciemny-zielony text-tlo-jasne rounded-r-lg -ml-[29px] p-2 pl-[10px] -mt-2 mb-[3px] text-sm leading-[18px] lg:w-[280px]"
-    >
-      {{ quote }}
-    </div>
+  <div :class="styles" class="h-[256px] w-[328px]">
     <!-- mb-6 => mb-4 -->
     <div class="flex items-center justify-around mb-4">
       <div class="">
@@ -55,7 +45,7 @@ const cardTypes = {
         </p>
       </div>
       <div>
-        <img class="h-[96px] w-[96px]" :src="img" :alt="alt" />
+        <img class="h-[96px] w-[96px]" :src="src" :alt="alt" />
       </div>
     </div>
     <div
@@ -65,13 +55,13 @@ const cardTypes = {
         <RadioInput
           option="Ohne Montage"
           name="options"
-          price="1 599"
+          :price="priceWithAssembly"
           value="1 599"
         />
         <RadioInput
           option="Inklusive Montage"
           name="options"
-          price="1 665"
+          :price="priceWithoutAssembly"
           value="1 665"
         />
       </div>

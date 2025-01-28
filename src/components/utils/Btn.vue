@@ -11,20 +11,16 @@ defineProps({
     default: "primary",
   },
   arrowRight: {
-    type: Boolean,
-    default: false,
+    type: String,
   },
   arrowLeft: {
-    type: Boolean,
-    default: false,
+    type: String,
   },
   arrowUp: {
     type: [String, Boolean],
-    default: "none", // options: "before", "after", "none"
   },
   arrowDown: {
     type: [String, Boolean],
-    default: "none", // options: "before", "after", "none"
   },
   disabled: {
     type: Boolean,
@@ -32,28 +28,30 @@ defineProps({
   },
 });
 
-const btnBase = "py-2 px-6 text-base font-bold flex justify-center";
+const btnBase = "py-2 px-6 text-base font-bold flex justify-center text-nowrap";
 
 const btnTypes = ref({
   // green
   primary: `${btnBase} rounded-[59px] bg-ciemny-zielony text-tlo-jasne disabled:bg-jasny-ciemny-zielen`,
   // transparent with outline
-  secondary: `${btnBase} rounded-[59px] bg-tlo-jasne text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
+  secondary: `${btnBase} rounded-[59px] bg-transparent text-ciemny-zielony border-ciemny-zielony border-[1px] rounded-[59px]`,
 
-  tertiary: `font-[500] border-b border-neon-zielony pb-1 h-[25px]`,
+  tertiary: `font-[500] border-b border-neon-zielony pb-1 h-[25px] disabled:text-jasny-ciemny-zielen disabled:border-jasny-ciemny-zielen`,
 });
 </script>
 
 <template>
   <button class="" :class="btnTypes[btnType]" :disabled="disabled">
     <span class="flex place-items-center gap-2">
-      <ArrowLeft v-if="arrowLeft" />
+      <ArrowLeft v-if="arrowLeft === 'before'" />
+      <ArrowRight v-if="arrowRight === 'before'" />
       <ArrowUp v-if="arrowUp === 'before'" />
       <ArrowDown v-if="arrowDown === 'before'" />
       <slot />
-      <ArrowDown v-if="arrowDown === 'after' || arrowDown === true" />
-      <ArrowUp v-if="arrowUp === 'after' || arrowUp === true" />
-      <ArrowRight v-if="arrowRight" />
+      <ArrowLeft v-if="arrowLeft === 'after'" />
+      <ArrowRight v-if="arrowRight === 'after'" />
+      <ArrowUp v-if="arrowUp === 'after'" />
+      <ArrowDown v-if="arrowDown === 'after'" />
     </span>
   </button>
 </template>

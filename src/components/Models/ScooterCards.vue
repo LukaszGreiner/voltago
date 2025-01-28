@@ -9,13 +9,13 @@ import ScooterCard from "./ScooterCard.vue";
     <ScooterCard
       name="Elektro-Roller"
       model="ZX-500"
-      image="src/assets/img/scooter-small-1.png"
+      src="src/assets/img/scooter-small-1.png"
       alt="ZX-500 electric scooter"
     />
     <ScooterCard
       name="Elektro-Roller"
       model="DJ03-V55"
-      image="src/assets/img/scooter-small-2.png"
+      src="src/assets/img/scooter-small-2.png"
       alt="DJ03-V55 electric scooter"
       quote="BVB und Arminia Fans schätzen ihn sehr!"
     />

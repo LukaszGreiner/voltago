@@ -1,5 +1,5 @@
 <script setup>
-import ShoppingProgressBar from "./ShoppingProgressBar.vue";
+import ShoppingProgressBar from "./ShoppingWizard.vue";
 </script>
 
 <template>

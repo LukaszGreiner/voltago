@@ -1,17 +1,16 @@
-<script setup lang="ts">
+<script setup>
 import ScootersComparison from "@/components/Models/ScootersComparison.vue";
 import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import Btn from "@/components/utils/Btn.vue";
-import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
+import BackBtn from "@/components/utils/BackBtn.vue";
+
+import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
 </script>
 
 <template>
-  <ShoppingLayout>
-    <template #header>
-      <ShoppingHeader currentStep="1" />
-    </template>
+  <ShoppingLayout currentStep="1">
 
     <template #main>
       <div>
@@ -23,25 +22,20 @@ import ScooterCard2 from "@/components/utils/ScooterCard2.vue";
           <ScooterCard2
             name="Elektro-Roller"
             model="ZX-500"
-            img="src/assets/img/scooter-small-1.png"
+            src="src/assets/img/scooter-small-1.png"
           />
           <span>oder</span>
           <ScooterCard2
             name="Elektro-Roller"
             model="DJO3-V55"
-            img="src/assets/img/scooter-small-2.png"
+            src="src/assets/img/scooter-small-2.png"
           />
         </div>
         <div
           class="border-b border-dashed border-jasny-ciemny-zielen h-1 w-auto mt-10"
         ></div>
         <ScootersComparison />
-        <Btn
-          class="mt-12 mb-16 mr-auto px-0 text-[16px]"
-          btnType="tertiary"
-          :arrow-left="true"
-          >Zurück zur Homepage</Btn
-        >
+        <BackBtn />
       </div>
     </template>
 

@@ -15,7 +15,7 @@ const props = defineProps({
     type: [String, Boolean],
     default: "minPrice",
   },
-  isChecked: {
+  checked: {
     type: Boolean,
     default: false,
   },
@@ -39,7 +39,7 @@ const props = defineProps({
   },
 });
 
-const optionsOpen = ref(props.isChecked);
+const optionsOpen = ref(props.checked);
 const isCheckedOption1 = ref(props.optionSelected === "1");
 const isCheckedOption2 = ref(props.optionSelected === "2");
 
@@ -54,7 +54,7 @@ const toggleOptions = () => {
 
 <template>
   <div
-    class="h-[auto] w-[328px] p-4 border rounded-lg border-jasny-ciemny-zielen"
+    class="bg-tlo-ciemne h-[auto] w-[328px] p-4 border rounded-lg border-jasny-ciemny-zielen"
   >
     <div class="flex justify-center items-center">
       <div class="flex-1">
@@ -70,7 +70,7 @@ const toggleOptions = () => {
       <ToggleSwitch
         @click.prevent="toggleOptions()"
         class="ml-6"
-        :isChecked="optionsOpen"
+        :checked="optionsOpen"
       />
     </div>
     <DashedLine2 v-if="accordionText || optionsOpen" class="my-4 mx-auto" />
@@ -78,13 +78,13 @@ const toggleOptions = () => {
       <RadioInput
         option="Ohne Montage"
         :price="priceWithoutAssembly"
-        :isChecked="isCheckedOption1"
+        :checked="isCheckedOption1"
         :name="name"
       />
       <RadioInput
         option="Inklusive Montage"
         :price="priceWithAssembly"
-        :isChecked="isCheckedOption2"
+        :checked="isCheckedOption2"
         :name="name"
       />
     </div>

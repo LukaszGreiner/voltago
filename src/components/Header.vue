@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<script setup>
 import DesktopNav from "@/Header/DesktopNav.vue";
 import Logo from "./decorative/Logo.vue";
-import BurgerButton from "./icons/burger-button.vue";
+import BurgerBtn from "./utils/BurgerBtn.vue";
 </script>
 
 <template>
@@ -15,13 +15,7 @@ import BurgerButton from "./icons/burger-button.vue";
       </div>
 
       <DesktopNav>
-        <Button
-          @click="$emit('openMenu')"
-          class="h-9 w-15 lg:hidden"
-          type="button"
-        >
-          <burger-button />
-        </Button>
+        <BurgerBtn @click="$emit('openMenu')" class="lg:hidden" />
       </DesktopNav>
     </div>
   </header>

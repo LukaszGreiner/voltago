@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import burgerBtnClose from "./icons/burger-btn-close.vue";
+import burgerBtnClose from "./icons/burger-btn-close-icon.vue";
+import BurgerBtn from "./utils/BurgerBtn.vue";
+
 const navItems = [
   { label: "Wer wir sind", href: "#about" },
   { label: "Modelle", href: "#models" },
@@ -15,9 +17,11 @@ const navItems = [
       class="fixed inset-0 z-[99] h-screen md:max-h-[478px] w-full bg-neon-zielony-jasny-2 overflow-y-auto"
     >
       <nav class="grid w-100 px-4 pt-4 md:px-12">
-        <button @click="$emit('closeMenu')" class="flex ml-auto">
-          <burger-btn-close />
-        </button>
+        <BurgerBtn
+          :isOpen="true"
+          @click="$emit('closeMenu')"
+          class="flex ml-auto"
+        />
         <menu class="text-base grid">
           <span
             class="border-dashed border-b-[1px] border-jasny-ciemny-zielen py-[21px]"

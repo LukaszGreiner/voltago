@@ -112,7 +112,7 @@ const btnShowLess = ref(false);
             <td
               v-for="scooter in scootersTable"
               :key="scooter.name"
-              class="pt-3 pb-6 even:pl-3 odd:pr-3 last:border-b-1 odd:border-r border-jasny-ciemny-zielen border-dashed"
+              class="bg-tlo-jasne pt-3 pb-6 even:pl-3 odd:pr-3 last:border-b-1 odd:border-r border-jasny-ciemny-zielen border-dashed"
             >
               <mark-done
                 class="mx-auto"
@@ -129,8 +129,8 @@ const btnShowLess = ref(false);
     @click="toggleTable"
     class="mx-auto"
     btn-type="secondary"
-    :arrow-up="btnShowLess"
-    :arrow-down="btnShowMore"
+    :arrow-up="btnShowLess && 'after'"
+    :arrow-down="btnShowMore && 'after'"
   >
     {{ btnShowMore ? "Spezifikation erweitern" : "Spezifikation reduzieren" }}
   </Btn>

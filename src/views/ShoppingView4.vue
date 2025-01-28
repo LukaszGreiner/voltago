@@ -25,11 +25,7 @@ const toggleEdit = () => {
 </script>
 
 <template>
-  <ShoppingLayout>
-    <template #header>
-      <ShoppingHeader currentStep="4" />
-    </template>
-
+  <ShoppingLayout currentStep="3">
     <template #main>
       <SummaryCard />
       <SummaryDetails />

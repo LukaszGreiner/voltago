@@ -1,8 +1,15 @@
+<script setup>
+defineProps({
+  sum: [String, Number],
+});
+</script>
+
 <template>
-  <!-- mt-[64px] equals half of the height of the image positioned absolute outside of the container -->
+  <!-- SummaryCard -->
   <div
-    class="relative bg-neon-zielony-jasny border border-neon-zielony rounded-xl px-4 pb-6 pt-20 mt-[64px]"
+    class="w-[328px] relative bg-neon-zielony-jasny border border-neon-zielony rounded-xl px-4 pb-6 pt-20 mt-[64px]"
   >
+    <!-- mt-[64px] equals half of the height of the image positioned absolute outside of the container -->
     <img
       class="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[124px] w-[133px]"
       src="/src/assets/img/scooter-small-1.png"

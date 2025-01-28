@@ -9,7 +9,7 @@ defineProps({
     type: String,
     default: "model",
   },
-  image: {
+  src: {
     type: String,
     default: "src/assets/img/scooter-small-1.png",
   },
@@ -24,8 +24,9 @@ defineProps({
 </script>
 
 <template>
+  <!-- ScooterCard -->
   <div
-    class="lg:w-[528px] md:min-h-[350px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-7 flex flex-col bg-neon-zielony-jasny border rounded-md border-neon-zielony justify-between"
+    class="min-h-[314px] lg:w-[528px] md:min-h-[350px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-7 flex flex-col bg-neon-zielony-jasny border rounded-md border-neon-zielony justify-between"
   >
     <div
       v-if="quote"
@@ -47,7 +48,7 @@ defineProps({
       <div class="flex flex-1">
         <img
           class="min-h-[120px] min-w-[120px] lg:h-[240px] lg:w-[250px]"
-          :src="image"
+          :src="src"
           :alt="alt"
         />
       </div>

@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  isChecked: {
+  checked: {
     type: Boolean,
     default: false,
   },
@@ -14,12 +14,12 @@ defineProps({
     <label>
       <!-- outer square -->
       <div
-        class="z-1 flex h-6 w-6 items-center justify-center rounded-[4px] border border-ciemny-zielony"
+        class="bg-tlo-jasne z-1 flex h-6 w-6 items-center justify-center rounded-[4px] border border-ciemny-zielony"
       >
         <input
           type="checkbox"
           class="peer hidden"
-          :checked="isChecked"
+          :checked="checked"
           :required="isRequired"
         />
         <!-- inner square -->

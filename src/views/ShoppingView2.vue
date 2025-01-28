@@ -4,6 +4,7 @@ import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import ToggleCard from "@/components/Shopping/ToggleCard.vue";
 import Btn from "@/components/utils/Btn.vue";
+import BackBtn from "@/components/utils/BackBtn.vue";
 import { ref } from "vue";
 
 const scooterAccessories = [
@@ -63,11 +64,7 @@ const scooterAccessories = [
 </script>
 
 <template>
-  <ShoppingLayout>
-    <template #header>
-      <ShoppingHeader currentStep="2" />
-    </template>
-
+  <ShoppingLayout currentStep="2">
     <template #main>
       <section
         class="grid grid-cols-1 justify-items-center md:grid-cols-2 gap-4"
@@ -77,7 +74,7 @@ const scooterAccessories = [
           :key="index"
           :name="accessory.name"
           :minPrice="accessory.minPrice"
-          :isChecked="accessory.isChecked"
+          :checked="accessory.isChecked"
           :priceWithoutAssembly="accessory.priceWithoutAssembly"
           :priceWithAssembly="accessory.priceWithAssembly"
           :accordionText="accessory.accordionText"
@@ -85,12 +82,7 @@ const scooterAccessories = [
           :optionSelected="accessory.optionSelected"
         />
       </section>
-      <Btn
-        class="mt-12 mb-16 mr-auto px-0 text-[16px]"
-        btnType="tertiary"
-        :arrow-left="true"
-        >Zurück</Btn
-      >
+      <BackBtn />
     </template>
 
     <template #footer>

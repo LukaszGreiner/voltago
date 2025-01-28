@@ -3,16 +3,13 @@ import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import Btn from "@/components/utils/Btn.vue";
+import BackBtn from "@/components/utils/BackBtn.vue";
 import OptionCard from "@/components/Shopping/OptionCard.vue";
 import OptionCardContainer from "@/components/Shopping/OptionCardContainer.vue";
 </script>
 
 <template>
-  <ShoppingLayout>
-    <template #header>
-      <ShoppingHeader currentStep="3" />
-    </template>
-
+  <ShoppingLayout currentStep="3">
     <template #main>
       <OptionCardContainer title="Art der Zustellung">
         <OptionCard
@@ -41,12 +38,7 @@ import OptionCardContainer from "@/components/Shopping/OptionCardContainer.vue";
         <OptionCard option="Zahlung bei Lieferung" icon="wallet-icon" />
       </OptionCardContainer>
 
-      <Btn
-        class="mt-12 mb-16 mr-auto px-0 text-[16px]"
-        btnType="tertiary"
-        :arrow-left="true"
-        >Zurück</Btn
-      >
+      <BackBtn />
     </template>
 
     <template #footer>

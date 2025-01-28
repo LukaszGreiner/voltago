@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Logo from "../decorative/Logo.vue";
-import ShoppingProgressBar from "./ShoppingProgressBar.vue";
+import ShoppingWizard from "./ShoppingWizard.vue";
 
 defineProps({
   currentStep: String,
@@ -12,6 +12,6 @@ defineProps({
     <div class="bg-tlo-ciemne p-4">
       <Logo />
     </div>
-    <ShoppingProgressBar :currentStep="currentStep" />
+    <ShoppingWizard :currentStep="currentStep" />
   </header>
 </template>
