@@ -7,5 +7,6 @@
     <router-link to="ShoppingView2">ShoppingView2</router-link>
     <router-link to="ShoppingView3">ShoppingView3</router-link>
     <router-link to="ShoppingView4">ShoppingView4</router-link>
+    <router-link to="testingcomponents">TestingComponents</router-link>
   </div>
 </template>
