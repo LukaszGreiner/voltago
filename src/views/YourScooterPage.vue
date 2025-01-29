@@ -1,9 +1,7 @@
 <script setup>
 import ScootersComparison from "@/components/Models/ScootersComparison.vue";
 import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
-import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
-import Btn from "@/components/utils/Btn.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
 </script>

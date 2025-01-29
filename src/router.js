@@ -1,22 +1,18 @@
-import {
-  createMemoryHistory,
-  createRouter,
-  createWebHistory,
-} from "vue-router";
-import ShoppingView1 from "./views/ShoppingView1.vue";
-import ShoppingView2 from "./views/ShoppingView2.vue";
-import ShoppingView3 from "./views/ShoppingView3.vue";
-import ShoppingView4 from "./views/ShoppingView4.vue";
-import Homepage from "./views/Homepage.vue";
-import TestingComponentsView from "./views/TestingComponentsView.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import LandingPage from "@/views/LandingPage.vue";
+import YourScooterPage from "@/views/YourScooterPage.vue";
+import AccessoriesPage from "./views/Accessoriespage.vue";
+import OrderDetailsPage from "@/views/OrderDetailsPage.vue";
+import SummaryPage from "@/views/SummaryPage.vue";
+import TestingComponentsPage from "@/views/TestingComponentsPage.vue";
 
 const routes = [
-  { path: "/", name: "home", component: Homepage },
-  { path: "/ShoppingView1", component: ShoppingView1 },
-  { path: "/ShoppingView2", component: ShoppingView2 },
-  { path: "/ShoppingView3", component: ShoppingView3 },
-  { path: "/ShoppingView4", component: ShoppingView4 },
-  { path: "/TestingComponents", component: TestingComponentsView },
+  { path: "/", component: LandingPage },
+  { path: "/YourScooterPage", component: YourScooterPage },
+  { path: "/AccessoriesPage", component: AccessoriesPage },
+  { path: "/OrderDetailsPage", component: OrderDetailsPage },
+  { path: "/SummaryPage", component: SummaryPage },
+  { path: "/TestingComponentsPage", component: TestingComponentsPage },
 ];
 
 const router = createRouter({

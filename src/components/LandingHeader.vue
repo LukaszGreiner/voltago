@@ -1,6 +1,6 @@
 <script setup>
-import DesktopNav from "@/Header/DesktopNav.vue";
 import Logo from "./decorative/Logo.vue";
+import DesktopNav from "./Header/DesktopNav.vue";
 import BurgerBtn from "./utils/BurgerBtn.vue";
 </script>
 

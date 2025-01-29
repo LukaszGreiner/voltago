@@ -1,22 +1,22 @@
 <script setup>
 import { ref } from "vue";
-import Header from "../components/Header.vue";
-import Main from "../components/Main.vue";
+import LandingHeader from "../components/LandingHeader.vue";
 import MobileMenu from "../components/MobileMenu.vue";
+import LandingMain from "../components/LandingMain.vue";
+import DrivingLicence from "../components/DrivingLicence.vue";
 import About from "../components/About.vue";
 import Models from "../components/Models.vue";
-import Footer from "../components/Footer.vue";
-import DrivingLicence from "../components/DrivingLicence.vue";
+import LandingFooter from "../components/LandingFooter.vue";
 
 const isMenuOpen = ref(false);
 </script>
 
 <template>
-  <Header @openMenu="isMenuOpen = true" />
+  <LandingHeader @openMenu="isMenuOpen = true" />
   <MobileMenu v-if="isMenuOpen" @closeMenu="isMenuOpen = false" />
-  <Main />
+  <LandingMain />
   <DrivingLicence />
   <About />
   <Models />
-  <Footer />
+  <LandingFooter />
 </template>

@@ -1,6 +1,4 @@
 <script setup>
-import Btn from "@/components/utils/Btn.vue";
-
 const navItems = [
   { label: "Wer wir sind", href: "#about" },
   { label: "Modelle", href: "#models" },
