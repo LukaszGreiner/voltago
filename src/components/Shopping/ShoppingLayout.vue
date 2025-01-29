@@ -1,6 +1,5 @@
 <script setup>
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
-import ShoppingProgressSection from "./ShoppingProgressSection.vue";
 defineProps({
   currentStep: [String, Number],
 });

@@ -2,6 +2,7 @@
 import Btn from "@/components/utils/Btn.vue";
 
 import { ref } from "vue";
+import TextField from "../utils/TextField.vue";
 
 const isEditable = ref(false);
 const formData = ref({
@@ -33,65 +34,30 @@ const toggleEdit = () => {
       <div
         class="bg-tlo-ciemne px-4 py-1 divide-y divide-dashed divide-jasny-ciemny-ziele flex flex-col"
       >
-        <div class="flex flex-col gap-[2px]">
-          <label
-            class="text-ciemny-zielony text-[14px] font-[400] leading-[22.4px] mt-3"
-            for="name"
-            >Vorname und Nachname</label
-          >
-          <input
-            id="name"
-            class="text-[15px] leading-[21px] font-[500] mb-3 bg-tlo-ciemne"
-            type="text"
-            v-model="formData.name"
-            :disabled="!isEditable"
-          />
-        </div>
-
-        <div class="flex flex-col gap-[2px]">
-          <label
-            class="text-ciemny-zielony text-[14px] font-[400] leading-[22.4px] mt-3"
-            for="email"
-            >Email</label
-          >
-          <input
-            id="email"
-            class="mb-3 text-[15px] leading-[21px] font-[500] bg-tlo-ciemne"
-            type="email"
-            v-model="formData.email"
-            :disabled="!isEditable"
-          />
-        </div>
-
-        <div class="flex flex-col gap-[2px]">
-          <label
-            class="text-ciemny-zielony text-[14px] font-[400] leading-[22.4px] mt-3"
-            for="phone"
-            >Telefon</label
-          >
-          <input
-            id="phone"
-            class="mb-3 text-[15px] leading-[21px] font-[500] bg-tlo-ciemne"
-            type="tel"
-            v-model="formData.phone"
-            :disabled="!isEditable"
-          />
-        </div>
-
-        <div class="flex flex-col gap-[2px]">
-          <label
-            class="text-ciemny-zielony text-[14px] font-[400] leading-[22.4px] mt-3"
-            for="address"
-            >Adresse</label
-          >
-          <input
-            id="address"
-            class="mb-3 text-[15px] leading-[21px] font-[500] bg-tlo-ciemne"
-            type="text"
-            v-model="formData.address"
-            :disabled="!isEditable"
-          />
-        </div>
+        <TextField
+          class="flex flex-col gap-[2px]"
+          label="Vorname und Nachname"
+          :disabled="!isEditable"
+          v-model="formData.name"
+        />
+        <TextField
+          class="flex flex-col gap-[2px]"
+          label="Email"
+          :disabled="!isEditable"
+          v-model="formData.email"
+        />
+        <TextField
+          class="flex flex-col gap-[2px]"
+          label="Telefon"
+          :disabled="!isEditable"
+          v-model="formData.phone"
+        />
+        <TextField
+          class="flex flex-col gap-[2px]"
+          label="Adresse"
+          :disabled="!isEditable"
+          v-model="formData.address"
+        />
       </div>
     </div>
     <!--  -->
@@ -106,20 +72,12 @@ const toggleEdit = () => {
       <div
         class="bg-tlo-ciemne px-4 py-1 divide-y divide-dashed divide-jasny-ciemny-ziele flex flex-col"
       >
-        <div class="flex flex-col gap-[2px]">
-          <label
-            class="text-ciemny-zielony text-[14px] font-[400] leading-[22.4px] mt-3"
-            for="name"
-            >Persönliche Abholung im Lager</label
-          >
-          <input
-            id="name"
-            class="text-[15px] leading-[21px] font-[500] mb-3 bg-tlo-ciemne"
-            type="text"
-            v-model="formData.warehouseAdress"
-            :disabled="!isEditable"
-          />
-        </div>
+        <TextField
+          class="flex flex-col gap-[2px]"
+          label="Persönliche Abholung im Lager"
+          :disabled="!isEditable"
+          v-model="formData.warehouseAdress"
+        />
       </div>
     </div>
     <!--  -->
