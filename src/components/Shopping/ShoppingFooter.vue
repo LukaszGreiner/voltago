@@ -1,10 +1,14 @@
 <script setup>
-import Btn from "../utils/Btn.vue";
+import NextPageBtn from "../utils/NextPageBtn.vue";
 
 defineProps({
   totalPrice: {
     type: Number,
     default: 0,
+  },
+  nextPage: {
+    type: String,
+    required: true,
   },
 });
 </script>
@@ -17,6 +21,6 @@ defineProps({
       Zu zahlender Betrag:
       <span class="text-[15px] leading-[21px]">{{ totalPrice }} €</span>
     </p>
-    <Btn class="h-10 w-[108px] my-5" arrowRight="after">Weiter</Btn>
+    <NextPageBtn :to="nextPage" />
   </footer>
 </template>

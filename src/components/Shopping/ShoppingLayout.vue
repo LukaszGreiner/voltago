@@ -1,7 +1,19 @@
 <script setup>
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
+import ShoppingFooter from "./ShoppingFooter.vue";
 defineProps({
-  currentStep: [String, Number],
+  currentStep: {
+    type: [String, Number],
+    required: true,
+  },
+  totalPrice: {
+    type: [String, Number],
+    required: true,
+  },
+  nextPage: {
+    type: String,
+    required: true,
+  },
 });
 </script>
 
@@ -11,6 +23,7 @@ defineProps({
     <main class="flex flex-col flex-1 pb-16 mb-16 items-center">
       <slot name="main"></slot>
     </main>
-    <slot name="footer"></slot>
+    <!-- <slot name="footer"></slot> -->
+    <ShoppingFooter :totalPrice="totalPrice" :nextPage="nextPage" />
   </div>
 </template>

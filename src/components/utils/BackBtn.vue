@@ -7,6 +7,7 @@ import Btn from "./Btn.vue";
     class="mt-12 mb-16 mr-auto px-0 text-[16px]"
     btnType="tertiary"
     arrow-left="before"
-    >Zurück</btn
   >
+    <a @click="$router.go(-1)">Zurück</a>
+  </btn>
 </template>

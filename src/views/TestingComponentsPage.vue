@@ -13,6 +13,7 @@ import ShoppingWizard from "../components/Shopping/ShoppingWizard.vue";
 import OptionCardContainer from "../components/Shopping/OptionCardContainer.vue";
 import OptionCard from "../components/Shopping/OptionCard.vue";
 import TermsAndConditions from "../components/Shopping/TermsAndConditions.vue";
+import BackBtn from "@/components/utils/BackBtn.vue";
 </script>
 <template>
   <div class="flex flex-col items-center p-4 h-full bg-slate-400 gap-4">
@@ -231,11 +232,10 @@ import TermsAndConditions from "../components/Shopping/TermsAndConditions.vue";
 
     <h3 class="mr-auto font-bold text-xl">SummaryDetails</h3>
 
-    SummaryDetails
-
     <h3 class="mr-auto font-bold text-xl">TermsAndConditions</h3>
     <TermsAndConditions />
     <!-- END -->
+    <BackBtn />
   </div>
 </template>
 <style scoped>

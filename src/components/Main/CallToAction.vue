@@ -1,5 +1,4 @@
 <script setup>
-import Btn from "../utils/Btn.vue";
 import GoShoppingBtn from "../utils/GoShoppingBtn.vue";
 </script>
 

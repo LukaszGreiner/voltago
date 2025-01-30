@@ -1,5 +1,6 @@
 <script setup>
 import Btn from "../utils/Btn.vue";
+import GoShoppingBtn from "../utils/GoShoppingBtn.vue";
 defineProps({
   name: {
     type: String,
@@ -55,7 +56,7 @@ defineProps({
     </div>
     <div class="flex flex-1 justify-center items-end">
       <div class="flex flex-col gap-4 w-[259px] h-[96px]">
-        <Btn>Elektroroller kaufen</Btn>
+        <GoShoppingBtn />
         <Btn btn-type="secondary">Download der Spezifikation </Btn>
       </div>
     </div>

@@ -4,6 +4,6 @@ import Btn from "./Btn.vue";
 
 <template>
   <Btn>
-    <RouterLink to="/shoppingview1">Elektroroller kaufen</RouterLink>
+    <RouterLink to="/yourscooterpage">Elektroroller kaufen</RouterLink>
   </Btn>
 </template>

@@ -1,15 +1,12 @@
 <script setup>
-import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
-import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
-import Btn from "@/components/utils/Btn.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import OptionCard from "@/components/Shopping/OptionCard.vue";
 import OptionCardContainer from "@/components/Shopping/OptionCardContainer.vue";
 </script>
 
 <template>
-  <ShoppingLayout currentStep="3">
+  <ShoppingLayout currentStep="3" totalPrice="0" nextPage="summarypage">
     <template #main>
       <OptionCardContainer title="Art der Zustellung">
         <OptionCard
@@ -39,10 +36,6 @@ import OptionCardContainer from "@/components/Shopping/OptionCardContainer.vue";
       </OptionCardContainer>
 
       <BackBtn />
-    </template>
-
-    <template #footer>
-      <ShoppingFooter :total-price="0" />
     </template>
   </ShoppingLayout>
 </template>

@@ -1,11 +1,7 @@
 <script setup>
-import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
-import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import ToggleCard from "@/components/Shopping/ToggleCard.vue";
-import Btn from "@/components/utils/Btn.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
-import { ref } from "vue";
 
 const scooterAccessories = [
   {
@@ -64,7 +60,7 @@ const scooterAccessories = [
 </script>
 
 <template>
-  <ShoppingLayout currentStep="2">
+  <ShoppingLayout currentStep="2" totalPrice="0" nextPage="orderdetailspage">
     <template #main>
       <section
         class="grid grid-cols-1 justify-items-center md:grid-cols-2 gap-4"
@@ -83,10 +79,6 @@ const scooterAccessories = [
         />
       </section>
       <BackBtn />
-    </template>
-
-    <template #footer>
-      <ShoppingFooter :total-price="0" />
     </template>
   </ShoppingLayout>
 </template>

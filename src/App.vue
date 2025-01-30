@@ -3,6 +3,6 @@ import DebugNav from "@/components/utils/DebugNav.vue";
 </script>
 
 <template>
-  <DebugNav />
+  <!-- <DebugNav /> -->
   <RouterView />
 </template>

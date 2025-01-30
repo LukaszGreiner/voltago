@@ -1,10 +1,9 @@
 <script setup>
-import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
-import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import SummaryCard from "@/components/Shopping/SummaryCard.vue";
 import SummaryDetails from "@/components/Shopping/SummaryDetails.vue";
 import TermsAndConditions from "@/components/Shopping/TermsAndConditions.vue";
+import BackBtn from "@/components/utils/BackBtn.vue";
 
 import { ref } from "vue";
 
@@ -25,15 +24,12 @@ const toggleEdit = () => {
 </script>
 
 <template>
-  <ShoppingLayout currentStep="3">
+  <ShoppingLayout currentStep="4" totalPrice="0" nextPage="#">
     <template #main>
       <SummaryCard />
       <SummaryDetails />
       <TermsAndConditions />
-    </template>
-
-    <template #footer>
-      <ShoppingFooter :total-price="0" />
+      <BackBtn />
     </template>
   </ShoppingLayout>
 </template>

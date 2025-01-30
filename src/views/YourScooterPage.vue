@@ -1,13 +1,12 @@
 <script setup>
 import ScootersComparison from "@/components/Models/ScootersComparison.vue";
-import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
 </script>
 
 <template>
-  <ShoppingLayout currentStep="1">
+  <ShoppingLayout currentStep="1" totalPrice="0" nextPage="accessoriespage">
     <template #main>
       <div>
         <h2 class="mb-4 text-[18px] leading-[140%]">
@@ -33,10 +32,6 @@ import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
         <ScootersComparison />
         <BackBtn />
       </div>
-    </template>
-
-    <template #footer>
-      <ShoppingFooter :total-price="0" />
     </template>
   </ShoppingLayout>
 </template>
