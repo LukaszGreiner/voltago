@@ -9,9 +9,9 @@ const navItems = [
 </script>
 
 <template>
-  <nav>
+  <nav class="ml-[32px]">
     <slot />
-    <menu class="hidden lg:flex space-x-6 text-base font-['DMSans']">
+    <menu class="hidden lg:flex space-x-6 text-base">
       <li v-for="item in navItems" :key="item.label">
         <a
           :href="item.href"

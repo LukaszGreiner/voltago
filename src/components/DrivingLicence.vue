@@ -5,8 +5,8 @@ import DrivingLicenceList from "./DrivingLicence/DrivingLicenceList.vue";
 
 <template>
   <section id="drivinglicence" class="grid justify-center">
-    <div class="lg:grid lg:grid-cols-2 items-center gap-[62.5px]">
-      <ScootersImg class="relative mt-20 lg:mt-0" />
+    <div class="xl:grid xl:grid-cols-2 items-center gap-[62.5px] xl:mt-20">
+      <ScootersImg class="w-[328px] h-[247px]" />
       <DrivingLicenceList />
     </div>
   </section>

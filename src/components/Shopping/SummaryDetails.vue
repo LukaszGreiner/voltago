@@ -14,10 +14,6 @@ const formData = ref({
   warehouseAdress: "Berlin, Strasse 50",
   paymentMethod: "Stripe - Kredit / Debitkarte",
 });
-
-const toggleEdit = () => {
-  isEditable.value = !isEditable.value;
-};
 </script>
 
 <template>
@@ -26,7 +22,7 @@ const toggleEdit = () => {
     <div>
       <div class="flex justify-between w-full">
         <h2 class="mb-2">Ihre Daten</h2>
-        <Btn btn-type="tertiary" @click="toggleEdit">{{
+        <Btn btn-type="tertiary" @click="isEditable = !isEditable">{{
           isEditable ? "Speichern" : "Ändern"
         }}</Btn>
       </div>

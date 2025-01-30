@@ -3,22 +3,19 @@ import GoShoppingBtn from "../utils/GoShoppingBtn.vue";
 </script>
 
 <template>
-  <!-- Call to action -->
-  <div
-    class="-mt-[7.5rem] px-4 lg:px-0 mx-auto md:ml-0 flex flex-col flex-end z-20 lg:block max-w-[528px] h-"
-  >
-    <h1 class="text-[32px] leading-[44px] font-medium mb-4 md:mb-6">
-      Elektromobilität <b>für alle.</b>
+  <div>
+    <h1
+      class="text-[32px] md:text-[44px] md:leading-[56px] leading-[40px] xl:text-[44px] xl:leading-[56px] font-medium xl:mb-6 mb-4 relative"
+    >
+      Elektromobilität <span class="font-bold">für alle.</span>
     </h1>
-    <h2 class="text-2xl font-regular mb-3">Home-Charging macht es möglich!</h2>
-    <p class="text-[18px] leading-[16px] mb-6 md:mb-8">
+    <h2 class="text-[24px] leading-[32px] mb-3">
+      Home-Charging macht es möglich!
+    </h2>
+    <p class="text-[18px] leading-[26px] mb-8">
       Auch wenn du im 14. Stock wohnst bist du jetzt mobil! Du lädst dein Akku
       in deiner Wohnung und mußt nicht an eine Ladesäule!
     </p>
-    <!-- <Btn>
-      <RouterLink to="/shoppingview1">Elektroroller kaufen</RouterLink>
-    </Btn> -->
-    <GoShoppingBtn />
+    <GoShoppingBtn class="w-[200px] h-[40px]" />
   </div>
-  <!-- End of Call to action -->
 </template>

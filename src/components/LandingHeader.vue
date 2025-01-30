@@ -1,22 +1,32 @@
 <script setup>
+import DashedSpline from "./decorative/DashedSpline.vue";
+import DashedSplineHorizontalLong from "./decorative/DashedSplineHorizontalLong.vue";
 import Logo from "./decorative/Logo.vue";
 import DesktopNav from "./Header/DesktopNav.vue";
+import BgImage from "./Main/BgImage.vue";
+import CallToAction from "./Main/CallToAction.vue";
 import BurgerBtn from "./utils/BurgerBtn.vue";
 </script>
 
 <template>
-  <header class="sticky bg-tlo-jasne md:static top-0 z-50">
+  <header class="relative">
     <div
-      class="relative flex justify-between lg:justify-start inset-0 z-10 pt-4 -mb-[58.5px]"
+      class="flex h-[64px] p-4 md:px-12 xl:pl-20 items-center justify-between xl:justify-normal bg-tlo-jasne md:bg-transparent md:absolute xl:relative fixed top-0 z-40 w-full"
     >
-      <!-- -mb-[58.5px] // header height -->
-      <div class="h-8 w-[182px] lg:mr-8">
-        <Logo />
-      </div>
-
-      <DesktopNav>
-        <BurgerBtn @click="$emit('openMenu')" class="lg:hidden" />
-      </DesktopNav>
+      <Logo />
+      <BurgerBtn @click="$emit('openMenu')" class="xl:hidden" />
+      <DesktopNav class="hidden xl:block" />
     </div>
+    <div
+      class="max-h-[calc(100vh-64px)] xl:-mt-[64px] xl:grid xl:grid-cols-2 xl:grid-rows-[auto_1fr] justify-end relative"
+    >
+      <BgImage />
+
+      <CallToAction
+        class="-translate-y-1/3 xl:translate-y-0 xl:mt-0 flex flex-col justify-center xl:max-w-[528px] xl:row-start-1 px-4 md:px-0 md:ml-12 xl:ml-20 md:w-[502px]"
+      />
+    </div>
+    <DashedSpline class="absolute right-0 bottom-0 xl:hidden" />
+    <dashed-spline-horizontal-long class="hidden xl:block col-span-2 ml-auto" />
   </header>
 </template>

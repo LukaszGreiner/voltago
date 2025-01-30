@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Logo from "../decorative/Logo.vue";
 import ShoppingWizard from "./ShoppingWizard.vue";
 
