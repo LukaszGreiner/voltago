@@ -4,9 +4,13 @@ import MarkDone from "../icons/mark-done.vue";
 import Btn from "../utils/Btn.vue";
 
 const props = defineProps({
-  initialHeight: {
+  initialHeightClass: {
     type: [Number, String],
-    default: 0,
+    default: "h-0",
+  },
+  isOpen: {
+    type: Boolean,
+    default: false,
   },
 });
 
@@ -70,17 +74,13 @@ const features = [
   { name: "Ladegerät", key: "charger" },
 ];
 
-function toggleTable() {
-  tableHeight.value =
-    tableHeight.value === "h-100" ? initialHeightClass : "h-100";
-  btnShowMore.value = !btnShowMore.value;
-  btnShowLess.value = !btnShowLess.value;
-}
+const isOpen = ref(props.isOpen);
+const tableHeight = ref(props.initialHeightClass);
 
-const initialHeightClass = `h-[${props.initialHeight}px]`;
-const tableHeight = ref(initialHeightClass);
-const btnShowMore = ref(true);
-const btnShowLess = ref(false);
+const toggleTable = () => {
+  isOpen.value = !isOpen.value;
+  tableHeight.value = isOpen.value ? "h-100" : props.initialHeightClass;
+};
 </script>
 
 <template>
@@ -129,9 +129,9 @@ const btnShowLess = ref(false);
     @click="toggleTable"
     class="mx-auto"
     btn-type="secondary"
-    :arrow-up="btnShowLess && 'after'"
-    :arrow-down="btnShowMore && 'after'"
+    :arrow-up="isOpen && 'after'"
+    :arrow-down="!isOpen && 'after'"
   >
-    {{ btnShowMore ? "Spezifikation erweitern" : "Spezifikation reduzieren" }}
+    {{ !isOpen ? "Spezifikation erweitern" : "Spezifikation reduzieren" }}
   </Btn>
 </template>

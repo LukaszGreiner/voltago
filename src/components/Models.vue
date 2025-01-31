@@ -11,6 +11,6 @@ import ScootersComparison from "./Models/ScootersComparison.vue";
   >
     <ModelsHeading />
     <ScooterCards class="mb-12" />
-    <ScootersComparison initialHeight="750" />
+    <ScootersComparison initialHeightClass="h-[750px]" />
   </section>
 </template>
