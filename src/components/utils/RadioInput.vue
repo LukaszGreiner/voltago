@@ -5,12 +5,9 @@ const props = defineProps({
     default: "option",
   },
   value: {
-    type: String,
+    type: Number,
   },
   name: {
-    type: String,
-  },
-  price: {
     type: String,
   },
   checked: {
@@ -22,7 +19,6 @@ const props = defineProps({
 
 <template>
   <!-- Custom input  -->
-  <!-- space-x-2 => space-x-3 -->
   <label class="flex items-center space-x-3">
     <!-- outer circle -->
     <div
@@ -31,7 +27,7 @@ const props = defineProps({
       <input
         type="radio"
         :name="name"
-        :value="value ? value : price"
+        :value="value"
         class="peer hidden"
         :checked="checked"
       />
@@ -44,8 +40,8 @@ const props = defineProps({
       option
     }}</span>
     <slot />
-    <span v-if="price" class="text-[23px] leading-[132%] font-[500]">
-      {{ price }} <span class="text-[15px]">€</span>
+    <span v-if="value" class="text-[23px] leading-[132%] font-[500]">
+      {{ value }} <span class="text-[15px]">€</span>
     </span>
   </label>
 </template>

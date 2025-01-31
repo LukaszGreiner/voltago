@@ -17,6 +17,8 @@ import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
           <ScooterCard2
             name="Elektro-Roller"
             model="ZX-500"
+            :priceWithoutAssembly="1599"
+            :priceWithAssembly="1699"
             src="src/assets/img/scooter-small-1.png"
           />
           <span>oder</span>

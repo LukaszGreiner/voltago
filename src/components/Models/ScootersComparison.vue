@@ -86,12 +86,16 @@ const toggleTable = () => {
 <template>
   <!-- Scooter Comparison -->
   <div class="overflow-hidden mb-12" :class="tableHeight">
-    <table>
+    <table class="table-fixed xl:w-[1046px]">
       <thead>
         <tr class="text-lg leading-[26px] font-bold">
           <!-- Scooter Model  -->
 
-          <th v-for="scooter in scootersTable" :key="scooter.name" class="pb-4">
+          <th
+            v-for="scooter in scootersTable"
+            :key="scooter.name"
+            class="pb-4 w-1/2"
+          >
             <p class="mb-2 text-center text-lg leading-7 font-normal">
               Elektro-Roller
             </p>

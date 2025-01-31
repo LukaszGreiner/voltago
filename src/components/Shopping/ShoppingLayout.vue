@@ -1,12 +1,9 @@
 <script setup>
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingFooter from "./ShoppingFooter.vue";
+import { inject } from "vue";
 defineProps({
   currentStep: {
-    type: [String, Number],
-    required: true,
-  },
-  totalPrice: {
     type: [String, Number],
     required: true,
   },
@@ -14,6 +11,7 @@ defineProps({
     type: String,
     required: true,
   },
+  nextPageDisabled: Boolean,
 });
 </script>
 
@@ -24,6 +22,6 @@ defineProps({
       <slot name="main"></slot>
     </main>
     <!-- <slot name="footer"></slot> -->
-    <ShoppingFooter :totalPrice="totalPrice" :nextPage="nextPage" />
+    <ShoppingFooter :nextPage="nextPage" />
   </div>
 </template>

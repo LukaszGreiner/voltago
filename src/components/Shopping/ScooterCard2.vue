@@ -1,4 +1,5 @@
 <script setup>
+import { inject } from "vue";
 import RadioInput from "../utils/RadioInput.vue";
 
 defineProps({
@@ -18,18 +19,18 @@ defineProps({
     type: String,
     default: "Scooter",
   },
-  priceWithAssembly: {
-    type: String,
-    default: "???",
-  },
   priceWithoutAssembly: {
-    type: String,
-    default: "???",
+    type: Number,
+    default: 1599,
+  },
+  priceWithAssembly: {
+    type: Number,
+    default: 1665,
   },
 });
-
+const updateModel = inject("updateModel");
 const styles =
-  "lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-4 flex flex-col b border rounded-md justify-between bg-tlo-ciemne border-jasny-ciemny-zielen";
+  "w-[328px] h-[256px] lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-4 flex flex-col b border rounded-md justify-between bg-tlo-ciemne border-jasny-ciemny-zielen";
 </script>
 
 <template>
@@ -49,20 +50,32 @@ const styles =
       </div>
     </div>
     <div
-      class="pb-3 flex flex-col flex-1 order rounded-lg border border-dashed border-jasny-ciemny-zielen h-full w-full p-4"
+      class="pb-3 flex flex-col flex-1 order rounded-lg border border-dashed border-jasny-ciemny-zielen justify-center p-4"
     >
       <div class="flex flex-col gap-2">
         <RadioInput
           option="Ohne Montage"
-          name="options"
-          :price="priceWithAssembly"
-          value="1 599"
+          name="scooterModel"
+          :value="priceWithoutAssembly"
+          @change="
+            updateModel({
+              model,
+              withAssembly: false,
+              price: priceWithoutAssembly,
+            })
+          "
         />
         <RadioInput
           option="Inklusive Montage"
-          name="options"
-          :price="priceWithoutAssembly"
-          value="1 665"
+          name="scooterModel"
+          :value="priceWithAssembly"
+          @change="
+            updateModel({
+              model,
+              withAssembly: true,
+              price: priceWithAssembly,
+            })
+          "
         />
       </div>
     </div>

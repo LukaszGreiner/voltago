@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { inject, ref } from "vue";
 import DashedLine2 from "../decorative/DashedLine2.vue";
 import ToggleSwitch from "../utils/ToggleSwitch.vue";
 import Accordion from "../utils/Accordion.vue";
@@ -8,24 +8,23 @@ import RadioInput from "../utils/RadioInput.vue";
 const props = defineProps({
   name: {
     type: String,
-    default: "Title",
     required: true,
   },
   minPrice: {
-    type: [String, Boolean],
-    default: "minPrice",
+    type: Number,
+    required: true,
   },
   checked: {
     type: Boolean,
     default: false,
   },
   priceWithoutAssembly: {
-    type: String,
-    default: "???",
+    type: Number,
+    required: true,
   },
   priceWithAssembly: {
-    type: String,
-    default: "???",
+    type: Number,
+    required: true,
   },
   accordionText: {
     type: String,
@@ -39,6 +38,9 @@ const props = defineProps({
   },
 });
 
+const updateFeatures = inject("updateFeatures");
+const removeFeature = inject("removeFeature");
+
 const optionsOpen = ref(props.checked);
 const isCheckedOption1 = ref(props.optionSelected === "1");
 const isCheckedOption2 = ref(props.optionSelected === "2");
@@ -46,9 +48,30 @@ const isCheckedOption2 = ref(props.optionSelected === "2");
 const toggleOptions = () => {
   optionsOpen.value = !optionsOpen.value;
 
-  // Select first option if none of them were selected
-  if (!isCheckedOption1.value && !isCheckedOption2.value)
+  // If none of the options are checked, after opening check first option
+  if (optionsOpen && !isCheckedOption1.value && !isCheckedOption1.value)
     isCheckedOption1.value = true;
+
+  // Add feature to the card when options are switched on
+  if (optionsOpen.value && isCheckedOption1.value)
+    updateFeatures({
+      name: props.name,
+      price: props.priceWithoutAssembly,
+      withAssembly: false,
+    });
+  else if (optionsOpen.value && isCheckedOption2.value)
+    updateFeatures({
+      name: props.name,
+      price: props.priceWithAssembly,
+      withAssembly: true,
+    });
+
+  // Remove feature from the card when options are switched off and reset checked options
+  if (!optionsOpen.value) {
+    removeFeature(props.name);
+    isCheckedOption1.value = false;
+    isCheckedOption2.value = false;
+  }
 };
 </script>
 
@@ -77,15 +100,25 @@ const toggleOptions = () => {
     <div class="grid gap-2 mb-4" v-show="optionsOpen">
       <RadioInput
         option="Ohne Montage"
-        :price="priceWithoutAssembly"
+        :value="priceWithoutAssembly"
         :checked="isCheckedOption1"
         :name="name"
+        @change="
+          updateFeatures({
+            name,
+            withAssembly: false,
+            price: priceWithoutAssembly,
+          })
+        "
       />
       <RadioInput
         option="Inklusive Montage"
-        :price="priceWithAssembly"
+        :value="priceWithAssembly"
         :checked="isCheckedOption2"
         :name="name"
+        @change="
+          updateFeatures({ name, withAssembly: true, price: priceWithAssembly })
+        "
       />
     </div>
     <Accordion

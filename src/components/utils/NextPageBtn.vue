@@ -5,11 +5,12 @@ defineProps({
     type: String,
     required: true,
   },
+  disabled: Boolean,
 });
 </script>
 
 <template>
   <router-link :to="to">
-    <btn arrowRight="after"> Weiter </btn>
+    <btn arrowRight="after" :disabled="disabled"> Weiter </btn>
   </router-link>
 </template>
