@@ -3,12 +3,17 @@ import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import OptionCard from "@/components/Shopping/OptionCard.vue";
 import OptionCardContainer from "@/components/Shopping/OptionCardContainer.vue";
+import FormField from "@/components/utils/FormField.vue";
+import PhoneFormField from "@/components/utils/PhoneFormField.vue";
+import CustomerDetailsForm from "@/components/Shopping/CustomerDetailsForm.vue";
 </script>
 
 <template>
   <ShoppingLayout currentStep="3" totalPrice="0" nextPage="summarypage">
     <template #main>
-      <OptionCardContainer title="Art der Zustellung">
+      <CustomerDetailsForm />
+
+      <OptionCardContainer title="Art der Zustellung" class="mb-14">
         <OptionCard
           option="Persönliche Abholung im Lager"
           icon="garage-icon"
@@ -34,6 +39,9 @@ import OptionCardContainer from "@/components/Shopping/OptionCardContainer.vue";
         />
         <OptionCard option="Zahlung bei Lieferung" icon="wallet-icon" />
       </OptionCardContainer>
+      <p class="mr-auto text-[12px] leading-[19.2px] text-ciemny-zielony">
+        *Obligatorish
+      </p>
 
       <BackBtn />
     </template>
