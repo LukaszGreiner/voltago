@@ -2,7 +2,7 @@
 import Btn from "@/components/utils/Btn.vue";
 
 import { ref } from "vue";
-import TextField from "../utils/TextField.vue";
+import TextField from "@/components/utils/TextField.vue";
 
 const isEditable = ref(false);
 const formData = ref({
