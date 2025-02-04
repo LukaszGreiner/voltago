@@ -16,9 +16,8 @@ defineProps({
   additionalCost: {
     type: String,
   },
+  checked: Boolean,
 });
-
-const model = defineModel();
 </script>
 
 <template>
@@ -28,8 +27,7 @@ const model = defineModel();
       class="mb-[10px]"
       :name="name"
       :option="option"
-      :checked="option === model"
-      @change="model = option"
+      :checked="checked"
     >
       <img
         v-if="icon"

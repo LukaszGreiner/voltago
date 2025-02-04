@@ -3,7 +3,7 @@ import OptionCardContainer from "@/components/shopping/OptionCardContainer.vue";
 import OptionCard from "@/components/shopping/OptionCard.vue";
 import { useCart } from "../composables/useCart";
 
-const { updateCart } = useCart();
+const { cart, updateCart } = useCart();
 
 const deliveryOptions = [
   {
@@ -16,7 +16,7 @@ const deliveryOptions = [
     name: "Lieferung an die angegebene Adresse",
     deliveryOption: "Delivery to the specified address",
     icon: "home-icon",
-    additionalCost: "100",
+    deliveryCost: 100,
   },
 ];
 </script>
@@ -24,14 +24,20 @@ const deliveryOptions = [
 <template>
   <OptionCardContainer title="Art der Zustellung">
     <OptionCard
-      v-for="option in deliveryOptions"
+      v-for="el in deliveryOptions"
       name="Delivery option"
-      :key="option.name"
-      :option="option.name"
-      :icon="option.icon"
-      :lowerText="option.deliveryAdress"
-      :additionalCost="option.additionalCost"
-      @change="updateCart({ deliveryMethod: option.deliveryOption })"
+      :key="el.name"
+      :option="el.name"
+      :icon="el.icon"
+      :lowerText="el.deliveryAdress"
+      :additionalCost="el.deliveryCost"
+      :checked="el.deliveryOption === cart.deliveryOption"
+      @change="
+        updateCart({
+          deliveryOption: el.deliveryOption,
+          deliveryCost: el.deliveryCost || 0,
+        })
+      "
     />
   </OptionCardContainer>
 </template>

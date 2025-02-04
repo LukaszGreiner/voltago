@@ -1,17 +1,20 @@
 import { reactive, computed } from "vue";
+import PaymentOptions from "../Shopping/PaymentOptions.vue";
 
 const cart = reactive({
   model: null,
   withAssembly: true,
   basePrice: 0,
-  features: [],
-  paymentMethod: null,
-  deliveryMethod: null,
+  features: [{ name: "placeholderFeature", withAssembly: true, price: 999 }],
+  paymentOption: null,
+  deliveryOption: null,
+  deliveryCost: 0,
 });
 
 const totalPrice = computed(() => {
   return (
     cart.basePrice +
+    cart.deliveryCost +
     cart.features.reduce((sum, feature) => sum + feature.price, 0)
   );
 });

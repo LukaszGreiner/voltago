@@ -35,7 +35,15 @@ const { totalPrice, cart } = useCart();
           <span v-if="feature.withAssembly"> - inkl. Montage</span>
         </p>
         <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"
-          >699 €</span
+          >{{ feature.price }} €</span
+        >
+      </li>
+      <li v-if="cart.deliveryCost > 0" class="flex justify-between">
+        <p class="text-[15px] leading-[21px] font-[500] text-balance">
+          Versandkosten
+        </p>
+        <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"
+          >{{ cart.deliveryCost }} €</span
         >
       </li>
     </ul>

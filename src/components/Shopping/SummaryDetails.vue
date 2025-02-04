@@ -79,7 +79,7 @@ const { cart } = useCart();
             id="paymentMethod"
             class="text-[16px] leading-[22.4px] font-[500] text-ciemny-zielony bg-tlo-ciemne p-4"
             type="text"
-            v-model="cart.paymentMethod"
+            v-model="cart.paymentOption"
             :disabled="true"
           />
         </div>
