@@ -1,9 +1,11 @@
 <script setup>
+import { computed } from "vue";
 import { useCart } from "../composables/useCart";
 import RadioInput from "../utils/RadioInput.vue";
+import NextPageBtn from "../utils/NextPageBtn.vue";
 const { cart, updateCart } = useCart();
 
-defineProps({
+const props = defineProps({
   name: {
     type: String,
     default: "name",
@@ -31,19 +33,22 @@ defineProps({
   withAssembly: Boolean,
 });
 
+const IsSelected = computed(() => {
+  return cart.model === props.model;
+});
+
 const styles =
-  "w-[328px] h-[256px] lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-4 flex flex-col b border rounded-md justify-between bg-tlo-ciemne border-jasny-ciemny-zielen";
+  " h-[256px] w-[328px] md:h-[314px] lg:h-[352px] lg:w-[416px] pt-4 pb-6 px-4 flex flex-col b border rounded-md  bg-tlo-ciemne border-jasny-ciemny-zielen";
 </script>
 
 <template>
-  <div :class="styles" class="h-[256px] w-[328px]">
-    <!-- mb-6 => mb-4 -->
-    <div class="flex items-center justify-around mb-4">
+  <div :class="styles">
+    <div class="flex items-center justify-around mb-4 h-[96px] lg:h-[120px]">
       <div class="">
-        <p class="text-[16px] leading-[140%]">
+        <p class="text-[16px] leading-[22.4px]">
           {{ name }}
         </p>
-        <p class="text-[24px] leading-[132%] font-[500]">
+        <p class="text-[24px] leading-[31.68px] font-[500]">
           {{ model }}
         </p>
       </div>
@@ -52,7 +57,7 @@ const styles =
       </div>
     </div>
     <div
-      class="pb-3 flex flex-col flex-1 order rounded-lg border border-dashed border-jasny-ciemny-zielen justify-center p-4"
+      class="pb-3 flex flex-col order rounded-lg border border-dashed border-jasny-ciemny-zielen justify-center p-4"
     >
       <div class="flex flex-col gap-2">
         <RadioInput
@@ -91,5 +96,13 @@ const styles =
         />
       </div>
     </div>
+    <!-- large screen -->
+    <NextPageBtn
+      to="accessoriespage"
+      v-show="IsSelected"
+      class="hidden lg:flex mt-6 w-full"
+      arrowRight="after"
+      >Auswählen und weiter</NextPageBtn
+    >
   </div>
 </template>

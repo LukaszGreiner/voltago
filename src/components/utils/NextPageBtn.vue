@@ -10,7 +10,11 @@ defineProps({
 </script>
 
 <template>
-  <router-link :to="to">
-    <btn arrowRight="after" :disabled="disabled"> Weiter </btn>
-  </router-link>
+  <div>
+    <router-link :to="to">
+      <btn class="!px-4 py-2 w-full" arrowRight="after" :disabled="disabled">
+        <slot>Weiter</slot>
+      </btn>
+    </router-link>
+  </div>
 </template>

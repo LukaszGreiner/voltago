@@ -23,9 +23,14 @@ defineProps({
 <template>
   <div class="flex flex-col h-screen">
     <ShoppingHeader :currentStep="currentStep" />
-    <main class="flex flex-col flex-1 pb-16 mb-16 items-center">
+
+    <!-- mb-[64px] height of the footer on mobile -->
+    <main class="mb-[64px] lg:mb-0 pb-16 flex flex-col items-center">
+      <div
+        class="hidden lg:block h-1 border-jasny-ciemny-zielen border-t-[1px] mb-10"
+      ></div>
       <slot name="main"></slot>
     </main>
-    <ShoppingFooter :nextPage="nextPage" />
+    <ShoppingFooter :nextPage="nextPage" class="lg:hidden" />
   </div>
 </template>

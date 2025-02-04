@@ -1,7 +1,9 @@
 <script setup>
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
+import SummaryCard from "@/components/Shopping/SummaryCard.vue";
 import ToggleCard from "@/components/Shopping/ToggleCard.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
+import NextPageBtn from "@/components/utils/NextPageBtn.vue";
 
 const scooterAccessories = [
   {
@@ -65,22 +67,28 @@ const scooterAccessories = [
 <template>
   <ShoppingLayout currentStep="2" nextPage="orderdetailspage">
     <template #main>
-      <section
-        class="grid grid-cols-1 justify-items-center md:grid-cols-2 gap-4"
-      >
-        <ToggleCard
-          v-for="(accessory, index) in scooterAccessories"
-          :key="index"
-          :name="accessory.name"
-          :minPrice="accessory.priceWithoutAssembly"
-          :checked="accessory.isChecked"
-          :priceWithoutAssembly="accessory.priceWithoutAssembly"
-          :priceWithAssembly="accessory.priceWithAssembly"
-          :accordionText="accessory.accordionText"
-          :accordionOpen="accessory.accordionOpen"
-          :withAssembly="accessory.withAssembly"
-        />
-      </section>
+      <div class="grid lg:grid-cols-2 lg:gap-20">
+        <div
+          class="flex gap-4 flex-wrap lg:flex-col lg:flex-nowrap justify-center"
+        >
+          <ToggleCard
+            v-for="(accessory, index) in scooterAccessories"
+            :key="index"
+            :name="accessory.name"
+            :minPrice="accessory.priceWithoutAssembly"
+            :checked="accessory.isChecked"
+            :priceWithoutAssembly="accessory.priceWithoutAssembly"
+            :priceWithAssembly="accessory.priceWithAssembly"
+            :accordionText="accessory.accordionText"
+            :accordionOpen="accessory.accordionOpen"
+            :withAssembly="accessory.withAssembly"
+          />
+        </div>
+        <SummaryCard class="hidden lg:block">
+          <NextPageBtn to="orderdetailspage" class="w-[154px] mx-auto mt-6" />
+        </SummaryCard>
+      </div>
+
       <BackBtn />
     </template>
   </ShoppingLayout>

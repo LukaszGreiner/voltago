@@ -8,35 +8,33 @@ import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
 <template>
   <ShoppingLayout currentStep="1" totalPrice="0" nextPage="accessoriespage">
     <template #main>
-      <div>
-        <h2 class="mb-4 text-[18px] leading-[140%]">
-          Wählen Sie den Elektroroller für Sie:
-        </h2>
+      <h2 class="block mb-4 text-[18px] leading-[140%] text-center">
+        Wählen Sie den Elektroroller für Sie:
+      </h2>
 
-        <div class="flex flex-col lg:flex-row items-center gap-4">
-          <ScooterCard2
-            name="Elektro-Roller"
-            model="ZX-500"
-            :priceWithoutAssembly="1599"
-            :priceWithAssembly="1699"
-            src="src/assets/img/scooter-small-1.png"
-            :withAssembly="false"
-          />
-          <span>oder</span>
-          <ScooterCard2
-            name="Elektro-Roller"
-            model="DJO3-V55"
-            :priceWithoutAssembly="1900"
-            :priceWithAssembly="1999"
-            src="src/assets/img/scooter-small-2.png"
-          />
-        </div>
-        <div
-          class="border-b border-dashed border-jasny-ciemny-zielen h-1 w-auto mt-10"
-        ></div>
-        <ScootersComparison />
-        <BackBtn />
+      <div class="flex flex-col lg:flex-row items-center gap-4">
+        <ScooterCard2
+          name="Elektro-Roller"
+          model="ZX-500"
+          :priceWithoutAssembly="1599"
+          :priceWithAssembly="1699"
+          src="src/assets/img/scooter-small-1.png"
+          :withAssembly="false"
+        />
+        <span>oder</span>
+        <ScooterCard2
+          name="Elektro-Roller"
+          model="DJO3-V55"
+          :priceWithoutAssembly="1900"
+          :priceWithAssembly="1999"
+          src="src/assets/img/scooter-small-2.png"
+        />
       </div>
+      <div
+        class="border-b border-dashed border-jasny-ciemny-zielen h-[1px] w-auto mt-10 mb-6"
+      ></div>
+      <ScootersComparison />
+      <BackBtn>Zurück zur Homepage</BackBtn>
     </template>
   </ShoppingLayout>
 </template>

@@ -4,17 +4,26 @@ import CustomerDetailsForm from "@/components/Shopping/CustomerDetailsForm.vue";
 import PaymentOptions from "@/components/Shopping/PaymentOptions.vue";
 import DeliveryOptions from "@/components/Shopping/DeliveryOptions.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
+import SummaryCard from "@/components/Shopping/SummaryCard.vue";
+import NextPageBtn from "@/components/utils/NextPageBtn.vue";
 </script>
 
 <template>
   <ShoppingLayout currentStep="3" totalPrice="0" nextPage="summarypage">
     <template #main>
-      <CustomerDetailsForm />
-      <PaymentOptions class="mb-14" />
-      <DeliveryOptions />
-      <p class="mr-auto text-[12px] leading-[19.2px] text-ciemny-zielony">
-        *Obligatorish
-      </p>
+      <div class="grid lg:grid-cols-2 gap-20">
+        <div>
+          <CustomerDetailsForm />
+          <PaymentOptions class="mb-14" />
+          <DeliveryOptions />
+          <p class="mr-auto text-[12px] leading-[19.2px] text-ciemny-zielony">
+            *Obligatorish
+          </p>
+        </div>
+        <SummaryCard class="hidden lg:block">
+          <NextPageBtn to="summarypage" class="w-[154px] mx-auto mt-6" />
+        </SummaryCard>
+      </div>
 
       <BackBtn />
     </template>

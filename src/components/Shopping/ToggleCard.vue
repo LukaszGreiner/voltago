@@ -86,7 +86,7 @@ const toggleOptions = () => {
 
 <template>
   <div
-    class="bg-tlo-ciemne h-[auto] w-[328px] p-4 border rounded-lg border-jasny-ciemny-zielen"
+    class="bg-tlo-ciemne h-fit w-[328px] p-4 border rounded-lg border-jasny-ciemny-zielen"
   >
     <div class="flex justify-center items-center">
       <div class="flex-1">

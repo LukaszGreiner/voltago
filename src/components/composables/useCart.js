@@ -1,11 +1,10 @@
 import { reactive, computed } from "vue";
-import PaymentOptions from "../Shopping/PaymentOptions.vue";
 
 const cart = reactive({
   model: null,
   withAssembly: true,
   basePrice: 0,
-  features: [{ name: "placeholderFeature", withAssembly: true, price: 999 }],
+  features: [],
   paymentOption: null,
   deliveryOption: null,
   deliveryCost: 0,

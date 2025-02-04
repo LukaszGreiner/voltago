@@ -8,9 +8,9 @@ defineProps({
 </script>
 
 <template>
-  <header class="p-0 grid gap-4">
-    <div class="bg-tlo-ciemne p-4">
-      <Logo />
+  <header class="p-0 flex flex-col">
+    <div class="bg-tlo-ciemne h-[64px] pl-4 md:pl-20 flex items-center mb-4">
+      <Logo class="h-[30px] w-[173px] md:w-[182px] md:h-[32px]" />
     </div>
     <ShoppingWizard :currentStep="currentStep" />
   </header>

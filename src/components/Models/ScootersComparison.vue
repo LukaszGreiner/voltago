@@ -85,7 +85,7 @@ const toggleTable = () => {
 
 <template>
   <!-- Scooter Comparison -->
-  <div class="overflow-hidden mb-12" :class="tableHeight">
+  <div class="overflow-hidden" :class="tableHeight">
     <table class="table-fixed xl:w-[1046px]">
       <thead>
         <tr class="text-lg leading-[26px] font-bold">
@@ -131,7 +131,7 @@ const toggleTable = () => {
   </div>
   <Btn
     @click="toggleTable"
-    class="mx-auto"
+    class="mx-auto mt-6"
     btn-type="secondary"
     :arrow-up="isOpen && 'after'"
     :arrow-down="!isOpen && 'after'"
