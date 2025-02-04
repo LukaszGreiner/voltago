@@ -1,7 +1,7 @@
 <script setup>
-defineProps({
-  sum: [String, Number],
-});
+import { useCart } from "@/components/composables/useCart";
+
+const { totalPrice, cart } = useCart();
 </script>
 
 <template>
@@ -17,35 +17,34 @@ defineProps({
     />
     <ul class="space-y-3 mb-6">
       <li class="flex justify-between">
-        <p class="text-[15px] leading-[21px] font-[500] text-balance">
-          Elektro-Roller ZX-500 - inkl.<br />
-          Montage
+        <p class="text-[15px] leading-[21px] font-[500]">
+          Elektro-Roller {{ cart.model }}
+          <span v-if="cart.withAssembly"> - inkl. Montage</span>
         </p>
         <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"
-          >1 665 €</span
+          >{{ cart.basePrice }} €</span
         >
       </li>
-      <li class="flex justify-between">
+      <li
+        v-for="feature in cart.features"
+        :key="feature.name"
+        class="flex justify-between"
+      >
         <p class="text-[15px] leading-[21px] font-[500] text-balance">
-          BE – Batterie-Erweiterung - ohne Montage
+          {{ feature.name }}
+          <span v-if="feature.withAssembly"> - inkl. Montage</span>
         </p>
         <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"
           >699 €</span
-        >
-      </li>
-      <li class="flex justify-between">
-        <p class="text-[15px] leading-[21px] font-[500] text-balance">
-          CB - Sitzbank Farbe abweichend - inkl. Montage
-        </p>
-        <span class="ml-6 text-nowrap text-[16px] leading-[22.4px] font-[700]"
-          >215 €</span
         >
       </li>
     </ul>
     <div class="bg-neon-zielony-jasny-2 px-6 py-[12.5px] rounded-xl">
       <p class="text-[15px] leading-[21px] font-[500] flex justify-between">
         Zu zahlender Betrag:
-        <span class="font-[700px] text-[16px] leading-[22.4px]">2 579 €</span>
+        <span class="font-[700px] text-[16px] leading-[22.4px]"
+          >{{ totalPrice }} €</span
+        >
       </p>
     </div>
   </div>

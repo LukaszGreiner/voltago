@@ -6,12 +6,10 @@ import BackBtn from "@/components/utils/BackBtn.vue";
 const scooterAccessories = [
   {
     name: "BE – Batterie-Erweiterung",
-    isChecked: false, // toggle Button state
     accordionText: "lorem ipsum dolor sit ament",
     accordionOpen: false,
     priceWithoutAssembly: 699,
     priceWithAssembly: 714,
-    optionSelected: "2", // '1' or '2' sets radio button checked as default
   },
   {
     name: "CB - Sitzbank Farbe abweichend (ggf. Lieferzeit - Lieferung schwarz / Tausch später)",
@@ -80,7 +78,7 @@ const scooterAccessories = [
           :priceWithAssembly="accessory.priceWithAssembly"
           :accordionText="accessory.accordionText"
           :accordionOpen="accessory.accordionOpen"
-          :optionSelected="accessory.optionSelected"
+          :withAssembly="accessory.withAssembly"
         />
       </section>
       <BackBtn />

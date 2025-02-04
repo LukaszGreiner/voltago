@@ -1,22 +1,11 @@
 <script setup>
 import ShoppingHeader from "@/components/Shopping/ShoppingHeader.vue";
 import ShoppingFooter from "./ShoppingFooter.vue";
-import { inject } from "vue";
-
-import { provide } from "vue";
 import { useCart } from "@/components/composables/useCart";
 import { useForm } from "@/components/composables/useForm";
 
-const { cart, updateModel, updateFeatures, removeFeature } = useCart();
+const { cart, updateCart, updateFeatures, removeFeature } = useCart();
 const { formDetails, updateFormDetails } = useForm();
-
-provide("cart", cart);
-provide("updateModel", updateModel);
-provide("updateFeatures", updateFeatures);
-provide("removeFeature", removeFeature);
-
-provide("formDetails", formDetails);
-provide("updateFormDetails", updateFormDetails);
 
 defineProps({
   currentStep: {

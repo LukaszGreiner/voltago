@@ -1,37 +1,30 @@
-import { reactive, watch } from "vue";
+import { reactive, computed } from "vue";
 
 const cart = reactive({
   model: null,
-  withAssembly: null,
+  withAssembly: true,
   basePrice: 0,
-  features: [
-    { name: "feature1", price: 100, withAssembly: false },
-    { name: "feature2", price: 200, withAssembly: true },
-  ],
-  totalPrice: 0,
+  features: [],
+  paymentMethod: null,
+  deliveryMethod: null,
 });
 
-// Watch for changes in basePrice and features to update totalPrice
-watch(
-  () => [cart.basePrice, cart.features],
-  () => {
-    cart.totalPrice =
-      cart.basePrice +
-      cart.features.reduce((sum, feature) => sum + feature.price, 0);
-  },
-  { deep: true }
-);
+const totalPrice = computed(() => {
+  return (
+    cart.basePrice +
+    cart.features.reduce((sum, feature) => sum + feature.price, 0)
+  );
+});
 
-const updateModel = (props) => {
-  const { model, withAssembly, price } = props;
-  cart.model = model;
-  cart.withAssembly = withAssembly;
-  cart.basePrice = price;
-  console.log("Cart: ", cart.model, cart.withAssembly, cart.basePrice);
+const updateCart = (props) => {
+  Object.assign(cart, props);
+
+  console.log("Passed props: ", props);
+  console.log("Cart: ", cart);
 };
 
 const updateFeatures = (props) => {
-  const { name, price, withAssembly, remove } = props;
+  const { name, price, withAssembly } = props;
 
   // Removes duplicate features
   cart.features = cart.features.filter((feature) => feature.name !== name);
@@ -47,15 +40,12 @@ const removeFeature = (featureName) => {
   console.log(cart.features);
 };
 
-const updateTotalPrice = () => {
-  cart.features.map();
-};
-
 export function useCart() {
   return {
     cart,
-    updateModel,
+    updateCart,
     updateFeatures,
     removeFeature,
+    totalPrice,
   };
 }

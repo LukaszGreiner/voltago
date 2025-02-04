@@ -8,6 +8,7 @@ defineProps({
 const countryCodes = ref([
   { code: "+49", name: "Germany" },
   { code: "+1", name: "USA" },
+  { code: "+48", name: "PL" },
   { code: "+44", name: "UK" },
   { code: "+91", name: "India" },
   { code: "+61", name: "Australia" },
@@ -18,8 +19,7 @@ const countryCodes = ref([
   { code: "+7", name: "Russia" },
 ]);
 
-const selectedCode = ref(countryCodes.value[0].code);
-const phoneNumber = ref("");
+const model = defineModel();
 </script>
 
 <template>
@@ -31,7 +31,8 @@ const phoneNumber = ref("");
     </label>
     <!-- Country Code Dropdown -->
     <select
-      v-model="selectedCode"
+      :required="required"
+      v-model="model"
       class="w-[128px] h-[46px] rounded-[4px] border border-jasny-ciemny-zielen focus:border-gray-400 focus:ring-2 focus:ring-gray-400 focus:outline-none bg-inherit text-ciemny-zielony pl-3 py-3 text-[16px] leading-[22.4px]"
     >
       <option
@@ -43,7 +44,6 @@ const phoneNumber = ref("");
       </option>
     </select>
 
-    <!-- Phone Number Input -->
-    <FormField type="tel" placeholder="Telefon*" :required="required" />
+    <slot />
   </div>
 </template>

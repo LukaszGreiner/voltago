@@ -1,19 +1,11 @@
 <script setup>
 import Btn from "@/components/utils/Btn.vue";
-
-import { ref } from "vue";
 import TextField from "@/components/utils/TextField.vue";
-
-const isEditable = ref(false);
-const formData = ref({
-  name: "Sven Schwarz",
-  email: "sven.schwarz@gmail.com",
-  phone: "+49 0123456789",
-  address: "Theaterstrasse 22, 53111 Bonn",
-  deliveryMethod: "Persönliche Abholung im Lager",
-  warehouseAdress: "Berlin, Strasse 50",
-  paymentMethod: "Stripe - Kredit / Debitkarte",
-});
+import { useForm } from "@/components/composables/useForm";
+import router from "@/router";
+import { useCart } from "../composables/useCart";
+const { formDetails, email, phoneNumber, fullName, fullAdress } = useForm();
+const { cart } = useCart();
 </script>
 
 <template>
@@ -22,9 +14,7 @@ const formData = ref({
     <div>
       <div class="flex justify-between w-full">
         <h2 class="mb-2">Ihre Daten</h2>
-        <Btn btn-type="tertiary" @click="isEditable = !isEditable">{{
-          isEditable ? "Speichern" : "Ändern"
-        }}</Btn>
+        <Btn btn-type="tertiary" @click="router.back()">Ändern</Btn>
       </div>
 
       <div
@@ -33,26 +23,26 @@ const formData = ref({
         <TextField
           class="flex flex-col gap-[2px]"
           label="Vorname und Nachname"
-          :disabled="!isEditable"
-          v-model="formData.name"
+          :disabled="true"
+          v-model="fullName"
         />
         <TextField
           class="flex flex-col gap-[2px]"
           label="Email"
-          :disabled="!isEditable"
-          v-model="formData.email"
+          :disabled="true"
+          v-model="email"
         />
         <TextField
           class="flex flex-col gap-[2px]"
           label="Telefon"
-          :disabled="!isEditable"
-          v-model="formData.phone"
+          :disabled="true"
+          v-model="phoneNumber"
         />
         <TextField
           class="flex flex-col gap-[2px]"
           label="Adresse"
-          :disabled="!isEditable"
-          v-model="formData.address"
+          :disabled="true"
+          v-model="fullAdress"
         />
       </div>
     </div>
@@ -60,9 +50,7 @@ const formData = ref({
     <div>
       <div class="flex justify-between w-full">
         <h2 class="mb-2">Art der Zustellung</h2>
-        <Btn btn-type="tertiary" @click="toggleEdit">{{
-          isEditable ? "Speichern" : "Ändern"
-        }}</Btn>
+        <Btn btn-type="tertiary" @click="router.back()">Ändern</Btn>
       </div>
 
       <div
@@ -71,30 +59,28 @@ const formData = ref({
         <TextField
           class="flex flex-col gap-[2px]"
           label="Persönliche Abholung im Lager"
-          :disabled="!isEditable"
-          v-model="formData.warehouseAdress"
+          :disabled="true"
+          v-model="fullAdress"
         />
       </div>
     </div>
     <!--  -->
-    <div>
+    <div class="mb-12">
       <div class="flex justify-between w-full">
         <h2 class="mb-2">Art der Zahlung</h2>
-        <Btn btn-type="tertiary" @click="toggleEdit">{{
-          isEditable ? "Speichern" : "Ändern"
-        }}</Btn>
+        <Btn btn-type="tertiary" @click="router.back()">Ändern</Btn>
       </div>
 
       <div
-        class="bg-tlo-ciemne px-4 py-1 divide-y divide-dashed divide-jasny-ciemny-ziele flex flex-col"
+        class="bg-tlo-ciemne divide-y divide-dashed divide-jasny-ciemny-ziele flex flex-col"
       >
         <div class="flex flex-col gap-[2px]">
           <input
             id="paymentMethod"
-            class="text-[15px] leading-[21px] font-[500] bg-tlo-ciemne"
+            class="text-[16px] leading-[22.4px] font-[500] text-ciemny-zielony bg-tlo-ciemne p-4"
             type="text"
-            v-model="formData.paymentMethod"
-            :disabled="!isEditable"
+            v-model="cart.paymentMethod"
+            :disabled="true"
           />
         </div>
       </div>

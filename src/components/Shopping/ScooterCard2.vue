@@ -1,6 +1,7 @@
 <script setup>
-import { inject } from "vue";
+import { useCart } from "../composables/useCart";
 import RadioInput from "../utils/RadioInput.vue";
+const { cart, updateCart } = useCart();
 
 defineProps({
   name: {
@@ -27,8 +28,9 @@ defineProps({
     type: Number,
     default: 1665,
   },
+  withAssembly: Boolean,
 });
-const updateModel = inject("updateModel");
+
 const styles =
   "w-[328px] h-[256px] lg:w-[528px] md:h-[314px] lg:h-[511px] pt-4 pb-6 lg:pb-10 px-4 flex flex-col b border rounded-md justify-between bg-tlo-ciemne border-jasny-ciemny-zielen";
 </script>
@@ -57,11 +59,16 @@ const styles =
           option="Ohne Montage"
           name="scooterModel"
           :value="priceWithoutAssembly"
+          :checked="
+            cart.model === model &&
+            !cart.withAssembly &&
+            cart.withAssembly !== null
+          "
           @change="
-            updateModel({
+            updateCart({
               model,
               withAssembly: false,
-              price: priceWithoutAssembly,
+              basePrice: priceWithoutAssembly,
             })
           "
         />
@@ -69,11 +76,16 @@ const styles =
           option="Inklusive Montage"
           name="scooterModel"
           :value="priceWithAssembly"
+          :checked="
+            cart.model === model &&
+            cart.withAssembly &&
+            cart.withAssembly !== null
+          "
           @change="
-            updateModel({
+            updateCart({
               model,
               withAssembly: true,
-              price: priceWithAssembly,
+              basePrice: priceWithAssembly,
             })
           "
         />

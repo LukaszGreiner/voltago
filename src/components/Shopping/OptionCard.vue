@@ -2,6 +2,7 @@
 import RadioInput from "../utils/RadioInput.vue";
 
 defineProps({
+  name: String,
   option: {
     type: String,
     default: "option",
@@ -16,12 +17,20 @@ defineProps({
     type: String,
   },
 });
+
+const model = defineModel();
 </script>
 
 <template>
   <!-- OptionCard -->
   <div class="p-4">
-    <RadioInput class="mb-[10px]" name="Art der Zustellung" :option="option">
+    <RadioInput
+      class="mb-[10px]"
+      :name="name"
+      :option="option"
+      :checked="option === model"
+      @change="model = option"
+    >
       <img
         v-if="icon"
         :src="'/src/assets/optionCardIcons/' + icon + '.svg'"

@@ -1,36 +1,51 @@
-import { reactive } from "vue";
+import { computed, reactive, watch } from "vue";
 
 const formDetails = reactive({
-  firstName: "",
-  lastName: "",
-  email: "",
-  phoneNumber: "",
-  street: "",
-  houseNumber: "",
-  postalCode: "",
-  city: "",
+  firstName: "Sven",
+  lastName: "Schwarz",
+  email: "sven.sven@gmail.com",
+  localPhone: "23122321",
+  phoneCountryCode: "+49",
+  street: "ulica",
+  houseNumber: "2",
+  postalCode: "1-100",
+  city: "Vienna",
 });
+
+const fullName = computed(() => {
+  return formDetails.firstName + " " + formDetails.lastName;
+});
+
+const phoneNumber = computed(() => {
+  return formDetails.phoneCountryCode + " " + formDetails.localPhone;
+});
+
+const fullAdress = computed(() => {
+  return (
+    formDetails.street +
+    " " +
+    formDetails.houseNumber +
+    ", " +
+    formDetails.postalCode +
+    " " +
+    formDetails.city
+  );
+});
+
+watch(
+  formDetails,
+  (val) => {
+    console.log(val);
+  },
+  { deep: true }
+);
 
 export function useForm() {
   return {
     formDetails,
-    updateFormDetails,
+    fullName,
+    phoneNumber,
+    fullAdress,
+    email: formDetails.email,
   };
 }
-
-const updateFormDetails = (props) => {
-  const { firstName, lastName, email, phoneNumber } = props;
-
-  formDetails.firstName = firstName;
-  formDetails.lastName = lastName;
-  formDetails.email = email;
-  formDetails.phoneNumber = phoneNumber;
-  console.log("Provided: ", firstName, lastName, email, phoneNumber);
-  console.log(
-    "FormDetails: ",
-    formDetails.firstName,
-    formDetails.lastName,
-    formDetails.email,
-    formDetails.phoneNumber
-  );
-};

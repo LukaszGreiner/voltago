@@ -8,6 +8,8 @@ defineProps({
   },
   required: Boolean,
 });
+
+const model = defineModel();
 </script>
 
 <template>
@@ -20,7 +22,7 @@ defineProps({
     <input
       :placeholder="placeholder"
       :type="type"
-      value=""
+      v-model="model"
       :required="required"
       class="w-full rounded-[4px] border border-jasny-ciemny-zielen focus:border-gray-400 focus:ring-2 focus:ring-gray-400 focus:outline-none bg-inherit text-ciemny-zielony pl-3 py-3 h-[46px]"
     />
