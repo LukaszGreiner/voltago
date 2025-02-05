@@ -25,7 +25,7 @@ defineProps({
     <ShoppingHeader :currentStep="currentStep" />
 
     <!-- mb-[64px] height of the footer on mobile -->
-    <main class="mb-[64px] lg:mb-0 pb-16 flex flex-col items-center">
+    <main class="mb-[64px] lg:mb-0 pb-16 lg:pb-0 flex flex-col items-center">
       <div
         class="hidden lg:block h-1 border-jasny-ciemny-zielen border-t-[1px] mb-10"
       ></div>

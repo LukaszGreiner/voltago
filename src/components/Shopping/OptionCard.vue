@@ -14,7 +14,7 @@ defineProps({
     type: String,
   },
   additionalCost: {
-    type: String,
+    type: Number,
   },
   checked: Boolean,
 });

@@ -1,9 +1,9 @@
 <script setup>
 import OptionCardContainer from "@/components/shopping/OptionCardContainer.vue";
 import OptionCard from "@/components/shopping/OptionCard.vue";
-import { useCart } from "../composables/useCart";
+import { useOrder } from "../composables/useOrder";
 
-const { cart, updateCart } = useCart();
+const { order, updateOrder } = useOrder();
 const paymentOptions = [
   {
     name: "Stripe - Kredit / Debitkarte",
@@ -35,8 +35,8 @@ const paymentOptions = [
       :option="el.name"
       :icon="el.icon"
       :lowerText="el.lowerText"
-      :checked="el.name === cart.paymentOption"
-      @change="updateCart({ paymentOption: el.name })"
+      :checked="el.name === order.paymentOption"
+      @change="updateOrder({ paymentOption: el.name })"
     />
   </OptionCardContainer>
 </template>

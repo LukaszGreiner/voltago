@@ -6,6 +6,20 @@ import DeliveryOptions from "@/components/Shopping/DeliveryOptions.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import SummaryCard from "@/components/Shopping/SummaryCard.vue";
 import NextPageBtn from "@/components/utils/NextPageBtn.vue";
+import { useCart } from "@/components/composables/useCart";
+import { computed } from "vue";
+import { useForm } from "@/components/composables/useForm";
+import { useOrder } from "@/components/composables/useOrder";
+const { formFilled } = useForm();
+const { order } = useOrder();
+
+const canGoToSummary = computed(() => {
+  return (
+    order?.paymentOption?.length > 0 &&
+    order?.deliveryOption?.length > 0 &&
+    formFilled.value
+  );
+});
 </script>
 
 <template>
@@ -20,9 +34,15 @@ import NextPageBtn from "@/components/utils/NextPageBtn.vue";
             *Obligatorish
           </p>
         </div>
+        <!-- Desktop -->
         <SummaryCard class="hidden lg:block">
-          <NextPageBtn to="summarypage" class="w-[154px] mx-auto mt-6" />
+          <NextPageBtn
+            :disabled="!canGoToSummary"
+            to="summarypage"
+            class="w-[154px] mx-auto mt-6"
+          />
         </SummaryCard>
+        <!-- End of Desktop -->
       </div>
 
       <BackBtn />

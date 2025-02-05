@@ -1,9 +1,9 @@
 <script setup>
 import OptionCardContainer from "@/components/shopping/OptionCardContainer.vue";
 import OptionCard from "@/components/shopping/OptionCard.vue";
-import { useCart } from "../composables/useCart";
+import { useOrder } from "../composables/useOrder";
 
-const { cart, updateCart } = useCart();
+const { order, updateOrder } = useOrder();
 
 const deliveryOptions = [
   {
@@ -31,9 +31,9 @@ const deliveryOptions = [
       :icon="el.icon"
       :lowerText="el.deliveryAdress"
       :additionalCost="el.deliveryCost"
-      :checked="el.deliveryOption === cart.deliveryOption"
+      :checked="el.deliveryOption === order.deliveryOption"
       @change="
-        updateCart({
+        updateOrder({
           deliveryOption: el.deliveryOption,
           deliveryCost: el.deliveryCost || 0,
         })

@@ -5,11 +5,11 @@ const formDetails = reactive({
   lastName: "Schwarz",
   email: "sven.sven@gmail.com",
   localPhone: "23122321",
-  phoneCountryCode: "+49",
-  street: "ulica",
-  houseNumber: "2",
-  postalCode: "1-100",
-  city: "Vienna",
+  phoneCountryCode: "",
+  street: "",
+  houseNumber: "",
+  postalCode: "",
+  city: "",
 });
 
 const fullName = computed(() => {
@@ -32,6 +32,17 @@ const fullAdress = computed(() => {
   );
 });
 
+const formFilled = computed(() => {
+  return (
+    formDetails?.localPhone?.length > 0 &&
+    formDetails?.phoneCountryCode?.length > 0 &&
+    formDetails?.street?.length > 0 &&
+    formDetails?.houseNumber?.length > 0 &&
+    formDetails?.postalCode?.length > 0 &&
+    formDetails?.city?.length > 0
+  );
+});
+
 watch(
   formDetails,
   (val) => {
@@ -47,5 +58,6 @@ export function useForm() {
     phoneNumber,
     fullAdress,
     email: formDetails.email,
+    formFilled,
   };
 }

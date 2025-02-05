@@ -5,8 +5,6 @@ const cart = reactive({
   withAssembly: true,
   basePrice: 0,
   features: [],
-  paymentOption: null,
-  deliveryOption: null,
   deliveryCost: 0,
 });
 
@@ -16,6 +14,10 @@ const totalPrice = computed(() => {
     cart.deliveryCost +
     cart.features.reduce((sum, feature) => sum + feature.price, 0)
   );
+});
+
+const cartDataFilled = computed(() => {
+  return cart?.model?.length > 0 && cart?.basePrice > 0;
 });
 
 const updateCart = (props) => {
@@ -49,5 +51,6 @@ export function useCart() {
     updateFeatures,
     removeFeature,
     totalPrice,
+    cartDataFilled,
   };
 }

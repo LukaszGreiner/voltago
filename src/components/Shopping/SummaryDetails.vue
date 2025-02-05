@@ -3,9 +3,9 @@ import Btn from "@/components/utils/Btn.vue";
 import TextField from "@/components/utils/TextField.vue";
 import { useForm } from "@/components/composables/useForm";
 import router from "@/router";
-import { useCart } from "../composables/useCart";
+import { useOrder } from "../composables/useOrder";
 const { formDetails, email, phoneNumber, fullName, fullAdress } = useForm();
-const { cart } = useCart();
+const { order } = useOrder();
 </script>
 
 <template>
@@ -79,7 +79,7 @@ const { cart } = useCart();
             id="paymentMethod"
             class="text-[16px] leading-[22.4px] font-[500] text-ciemny-zielony bg-tlo-ciemne p-4"
             type="text"
-            v-model="cart.paymentOption"
+            v-model="order.paymentOption"
             :disabled="true"
           />
         </div>

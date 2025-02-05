@@ -1,9 +1,11 @@
 <script setup>
+import { useCart } from "@/components/composables/useCart";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import SummaryCard from "@/components/Shopping/SummaryCard.vue";
 import ToggleCard from "@/components/Shopping/ToggleCard.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import NextPageBtn from "@/components/utils/NextPageBtn.vue";
+const { cart } = useCart();
 
 const scooterAccessories = [
   {
@@ -85,7 +87,11 @@ const scooterAccessories = [
           />
         </div>
         <SummaryCard class="hidden lg:block">
-          <NextPageBtn to="orderdetailspage" class="w-[154px] mx-auto mt-6" />
+          <NextPageBtn
+            :disabled="!cart?.model?.length > 0"
+            to="orderdetailspage"
+            class="w-[154px] mx-auto mt-6"
+          />
         </SummaryCard>
       </div>
 

@@ -17,7 +17,7 @@ const { totalPrice, cart } = useCart();
         alt="scooter"
       />
       <ul class="space-y-3 mb-6">
-        <li class="flex justify-between">
+        <li v-if="cart.model" class="flex justify-between">
           <p class="text-[15px] leading-[21px] font-[500]">
             Elektro-Roller {{ cart.model }}
             <span v-if="cart.withAssembly"> - inkl. Montage</span>
@@ -26,6 +26,7 @@ const { totalPrice, cart } = useCart();
             >{{ cart.basePrice }} €</span
           >
         </li>
+        <li v-else>Elektro-Roller modell nicht ausgewählt</li>
         <li
           v-for="feature in cart.features"
           :key="feature.name"
