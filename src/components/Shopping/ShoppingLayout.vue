@@ -31,6 +31,8 @@ defineProps({
       ></div>
       <slot name="main"></slot>
     </main>
-    <ShoppingFooter :nextPage="nextPage" class="lg:hidden" />
+    <slot name="footer">
+      <ShoppingFooter :nextPage="nextPage" class="lg:hidden" />
+    </slot>
   </div>
 </template>

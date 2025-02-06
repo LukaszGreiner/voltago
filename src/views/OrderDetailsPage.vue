@@ -5,6 +5,7 @@ import PaymentOptions from "@/components/Shopping/PaymentOptions.vue";
 import DeliveryOptions from "@/components/Shopping/DeliveryOptions.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import SummaryCard from "@/components/Shopping/SummaryCard.vue";
+import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import NextPageBtn from "@/components/utils/NextPageBtn.vue";
 import { useCart } from "@/components/composables/useCart";
 import { computed } from "vue";
@@ -12,13 +13,14 @@ import { useForm } from "@/components/composables/useForm";
 import { useOrder } from "@/components/composables/useOrder";
 const { formFilled } = useForm();
 const { order } = useOrder();
+const { cartDataFilled } = useCart();
+
+function hasValidOrder() {
+  return order?.paymentOption?.length > 0 && order?.deliveryOption?.length > 0;
+}
 
 const canGoToSummary = computed(() => {
-  return (
-    order?.paymentOption?.length > 0 &&
-    order?.deliveryOption?.length > 0 &&
-    formFilled.value
-  );
+  return hasValidOrder(order) && formFilled.value && cartDataFilled.value;
 });
 </script>
 
@@ -46,6 +48,11 @@ const canGoToSummary = computed(() => {
       </div>
 
       <BackBtn />
+    </template>
+    <template #footer>
+      <ShoppingFooter class="lg:hidden">
+        <NextPageBtn to="summarypage" :disabled="!canGoToSummary" />
+      </ShoppingFooter>
     </template>
   </ShoppingLayout>
 </template>

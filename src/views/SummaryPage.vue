@@ -3,10 +3,12 @@ import { useCart } from "@/components/composables/useCart";
 import { useForm } from "@/components/composables/useForm";
 import { useOrder } from "@/components/composables/useOrder";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
+import ShoppingFooter from "@/components/Shopping/ShoppingFooter.vue";
 import SummaryCard from "@/components/Shopping/SummaryCard.vue";
 import SummaryDetails from "@/components/Shopping/SummaryDetails.vue";
 import TermsAndConditions from "@/components/Shopping/TermsAndConditions.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
+import NextPageBtn from "@/components/utils/NextPageBtn.vue";
 import Btn from "@/components/utils/Btn.vue";
 import { computed } from "vue";
 const { cartDataFilled } = useCart();
@@ -34,6 +36,11 @@ const canOrder = computed(() => {
         </SummaryCard>
       </div>
       <BackBtn />
+    </template>
+    <template #footer>
+      <ShoppingFooter class="lg:hidden">
+        <NextPageBtn to="summarypage" :disabled="!canOrder" />
+      </ShoppingFooter>
     </template>
   </ShoppingLayout>
 </template>

@@ -1,5 +1,4 @@
 <script setup>
-import { inject } from "vue";
 import { useCart } from "../composables/useCart";
 import NextPageBtn from "../utils/NextPageBtn.vue";
 const { cart, totalPrice } = useCart();
@@ -24,6 +23,8 @@ defineProps({
         >{{ totalPrice }} €</span
       >
     </p>
-    <NextPageBtn :to="nextPage" :disabled="!cart.model" />
+    <slot>
+      <NextPageBtn :to="nextPage" :disabled="!cart.model" />
+    </slot>
   </footer>
 </template>

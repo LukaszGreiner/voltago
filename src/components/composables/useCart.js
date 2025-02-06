@@ -3,9 +3,9 @@ import { reactive, computed } from "vue";
 const cart = reactive({
   model: null,
   withAssembly: true,
-  basePrice: 0,
+  basePrice: null,
   features: [],
-  deliveryCost: 0,
+  deliveryCost: null,
 });
 
 const totalPrice = computed(() => {
