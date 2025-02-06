@@ -1,5 +1,5 @@
 <script setup>
-import { useCart } from "@/components/composables/useCart";
+import { useCart } from "../composables/useCart";
 
 const { totalPrice, cart } = useCart();
 </script>

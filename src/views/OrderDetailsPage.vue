@@ -12,7 +12,7 @@ import { computed } from "vue";
 import { useForm } from "@/components/composables/useForm";
 import { useOrder } from "@/components/composables/useOrder";
 const { formFilled } = useForm();
-const { order } = useOrder();
+const { order, allTermsAccepted } = useOrder();
 const { cartDataFilled } = useCart();
 
 function hasValidOrder() {
@@ -50,7 +50,7 @@ const canGoToSummary = computed(() => {
       <BackBtn />
     </template>
     <template #footer>
-      <ShoppingFooter class="lg:hidden">
+      <ShoppingFooter class="lg:hidden" nextPage="summarypage">
         <NextPageBtn to="summarypage" :disabled="!canGoToSummary" />
       </ShoppingFooter>
     </template>

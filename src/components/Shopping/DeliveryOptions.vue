@@ -2,9 +2,10 @@
 import OptionCardContainer from "@/components/shopping/OptionCardContainer.vue";
 import OptionCard from "@/components/shopping/OptionCard.vue";
 import { useOrder } from "../composables/useOrder";
+import { useCart } from "../composables/useCart";
 
 const { order, updateOrder } = useOrder();
-
+const { updateCart } = useCart();
 const deliveryOptions = [
   {
     name: "Persönliche Abholung im Lager",
@@ -19,6 +20,13 @@ const deliveryOptions = [
     deliveryCost: 100,
   },
 ];
+
+const handleOptionChange = (el) => {
+  updateOrder({
+    deliveryOption: el.deliveryOption,
+  });
+  updateCart({ deliveryCost: el.deliveryCost });
+};
 </script>
 
 <template>
@@ -32,12 +40,7 @@ const deliveryOptions = [
       :lowerText="el.deliveryAdress"
       :additionalCost="el.deliveryCost"
       :checked="el.deliveryOption === order.deliveryOption"
-      @change="
-        updateOrder({
-          deliveryOption: el.deliveryOption,
-          deliveryCost: el.deliveryCost || 0,
-        })
-      "
+      @change="handleOptionChange(el)"
     />
   </OptionCardContainer>
 </template>

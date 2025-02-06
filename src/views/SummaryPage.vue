@@ -13,10 +13,15 @@ import Btn from "@/components/utils/Btn.vue";
 import { computed } from "vue";
 const { cartDataFilled } = useCart();
 const { formFilled } = useForm();
-const { orderFilled } = useOrder();
+const { orderFilled, allTermsAccepted } = useOrder();
 
 const canOrder = computed(() => {
-  return cartDataFilled.value && formFilled.value && orderFilled.value;
+  return (
+    cartDataFilled.value &&
+    formFilled.value &&
+    orderFilled.value &&
+    allTermsAccepted.value
+  );
 });
 </script>
 
