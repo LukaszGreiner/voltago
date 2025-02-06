@@ -74,6 +74,7 @@ const styles =
               model,
               withAssembly: false,
               basePrice: priceWithoutAssembly,
+              modelImg: src,
             })
           "
         />
@@ -91,6 +92,7 @@ const styles =
               model,
               withAssembly: true,
               basePrice: priceWithAssembly,
+              modelImg: src,
             })
           "
         />

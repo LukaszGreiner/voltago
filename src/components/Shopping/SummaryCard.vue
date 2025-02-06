@@ -13,7 +13,7 @@ const { totalPrice, cart } = useCart();
       <!-- mt-[64px] equals half of the height of the image positioned absolute outside of the container -->
       <img
         class="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[124px] w-[133px]"
-        src="/src/assets/img/scooter-small-1.png"
+        :src="cart.modelImg"
         alt="scooter"
       />
       <ul class="space-y-3 mb-6">
