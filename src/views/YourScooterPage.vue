@@ -31,10 +31,10 @@ import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
         />
       </div>
       <div
-        class="border-b border-dashed border-jasny-ciemny-zielen h-[1px] w-auto mt-10 mb-6"
+        class="border-b border-dashed border-jasny-ciemny-zielen h-[1] w-full mt-10 mb-6"
       ></div>
       <ScootersComparison />
-      <BackBtn>Zurück zur Homepage</BackBtn>
+      <BackBtn to="/">Zurück zur Homepage</BackBtn>
     </template>
   </ShoppingLayout>
 </template>

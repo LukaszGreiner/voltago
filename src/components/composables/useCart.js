@@ -4,7 +4,7 @@ const cart = reactive({
   model: "ZX-500",
   modelImg: "src/assets/img/scooter-small-1.png",
   withAssembly: false,
-  basePrice: null,
+  basePrice: 1599,
   features: [],
   deliveryCost: null,
 });

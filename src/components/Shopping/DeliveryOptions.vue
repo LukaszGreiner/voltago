@@ -22,10 +22,12 @@ const deliveryOptions = [
 ];
 
 const handleOptionChange = (el) => {
+  const deliveryCost = el.deliveryCost || 0;
+
   updateOrder({
     deliveryOption: el.deliveryOption,
   });
-  updateCart({ deliveryCost: el.deliveryCost });
+  updateCart({ deliveryCost: deliveryCost });
 };
 </script>
 

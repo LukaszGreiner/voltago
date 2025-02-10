@@ -12,7 +12,7 @@ import { computed } from "vue";
 import { useForm } from "@/components/composables/useForm";
 import { useOrder } from "@/components/composables/useOrder";
 const { formFilled } = useForm();
-const { order, allTermsAccepted } = useOrder();
+const { order } = useOrder();
 const { cartDataFilled } = useCart();
 
 function hasValidOrder() {
@@ -47,7 +47,7 @@ const canGoToSummary = computed(() => {
         <!-- End of Desktop -->
       </div>
 
-      <BackBtn />
+      <BackBtn to="/accessoriespage" />
     </template>
     <template #footer>
       <ShoppingFooter class="lg:hidden" nextPage="summarypage">

@@ -22,7 +22,10 @@ defineProps({
 
 <template>
   <!-- OptionCard -->
-  <div class="p-4">
+  <div
+    class="p-4 first-of-type:rounded-t-xl last-of-type:rounded-b-xl"
+    :class="checked ? 'bg-tlo-ciemne' : 'bg-tlo-jasne'"
+  >
     <RadioInput
       class="mb-[10px]"
       :name="name"
