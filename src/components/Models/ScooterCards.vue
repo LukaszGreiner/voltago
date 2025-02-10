@@ -1,5 +1,10 @@
 <script setup>
+import { useCart } from "../composables/useCart";
+import Btn from "../utils/Btn.vue";
+import GoShoppingBtn from "../utils/GoShoppingBtn.vue";
 import ScooterCard from "./ScooterCard.vue";
+const { updateCart } = useCart();
+import Scooters from "@/data/scooters";
 </script>
 
 <template>
@@ -7,17 +12,24 @@ import ScooterCard from "./ScooterCard.vue";
     class="flex flex-col items-center justify-center md:flex-row gap-10 md:gap-4"
   >
     <ScooterCard
-      name="Elektro-Roller"
-      model="ZX-500"
-      src="src/assets/img/scooter-small-1.png"
-      alt="ZX-500 electric scooter"
-    />
-    <ScooterCard
-      name="Elektro-Roller"
-      model="DJ03-V55"
-      src="src/assets/img/scooter-small-2.png"
-      alt="DJ03-V55 electric scooter"
-      quote="BVB und Arminia Fans schätzen ihn sehr!"
-    />
+      v-for="el in Scooters"
+      :key="el.model"
+      :name="el.name"
+      :model="el.model"
+      :src="el.src"
+      :alt="el.alt"
+      :quote="el.quote"
+    >
+      <GoShoppingBtn
+        @click="
+          updateCart({
+            model: el.model,
+            modelImg: el.src,
+            basePrice: el.basePrice,
+          })
+        "
+      />
+      <Btn btn-type="secondary">Download der Spezifikation </Btn>
+    </ScooterCard>
   </div>
 </template>

@@ -22,13 +22,13 @@ const props = defineProps({
     type: String,
     default: "Scooter",
   },
-  priceWithoutAssembly: {
+  basePrice: {
     type: Number,
-    default: 1599,
+    default: 0,
   },
   priceWithAssembly: {
     type: Number,
-    default: 1665,
+    default: 0,
   },
   withAssembly: Boolean,
 });
@@ -63,7 +63,7 @@ const styles =
         <RadioInput
           option="Ohne Montage"
           name="scooterModel"
-          :value="priceWithoutAssembly"
+          :value="basePrice"
           :checked="
             cart.model === model &&
             !cart.withAssembly &&
@@ -73,7 +73,7 @@ const styles =
             updateCart({
               model,
               withAssembly: false,
-              basePrice: priceWithoutAssembly,
+              basePrice: basePrice,
               modelImg: src,
             })
           "
@@ -107,4 +107,5 @@ const styles =
       >Auswählen und weiter</NextPageBtn
     >
   </div>
+  <slot />
 </template>
