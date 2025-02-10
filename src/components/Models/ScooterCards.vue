@@ -13,6 +13,7 @@ import Scooters from "@/data/scooters";
   >
     <ScooterCard
       v-for="el in Scooters"
+      class="flex-1"
       :key="el.model"
       :name="el.name"
       :model="el.model"

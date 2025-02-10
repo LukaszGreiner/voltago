@@ -85,7 +85,7 @@ const toggleTable = () => {
 
 <template>
   <!-- Scooter Comparison -->
-  <div class="overflow-hidden" :class="tableHeight">
+  <div class="overflow-hidden relative" :class="tableHeight">
     <table class="table-fixed xl:w-[1046px]">
       <thead>
         <tr class="text-lg leading-[26px] font-bold">
@@ -128,6 +128,10 @@ const toggleTable = () => {
         </template>
       </tbody>
     </table>
+    <div
+      v-if="!isOpen"
+      class="absolute inset-x-0 bottom-0 h-9 bg-[linear-gradient(0deg,_#FAF6F2_40%,_rgba(250,246,242,0.4)_100%)]"
+    ></div>
   </div>
   <Btn
     @click="toggleTable"
