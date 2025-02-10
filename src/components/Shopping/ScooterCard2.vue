@@ -42,7 +42,7 @@ const styles =
 </script>
 
 <template>
-  <div :class="styles">
+  <div :class="[styles, IsSelected ? 'bg-tlo-ciemne' : 'bg-tlo-jasne']">
     <div class="flex items-center justify-around mb-4 h-[96px] lg:h-[120px]">
       <div class="">
         <p class="text-[16px] leading-[22.4px]">

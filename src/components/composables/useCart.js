@@ -1,9 +1,9 @@
 import { reactive, computed } from "vue";
 
 const cart = reactive({
-  model: null,
+  model: "ZX-500",
   modelImg: "src/assets/img/scooter-small-1.png",
-  withAssembly: null,
+  withAssembly: false,
   basePrice: null,
   features: [],
   deliveryCost: null,
