@@ -1,7 +1,7 @@
 <script setup>
-import OptionCardContainer from "@/components/shopping/OptionCardContainer.vue";
-import OptionCard from "@/components/shopping/OptionCard.vue";
 import { useOrder } from "../composables/useOrder";
+import OptionCard from "./OptionCard.vue";
+import OptionCardContainer from "./OptionCardContainer.vue";
 
 const { order, updateOrder } = useOrder();
 const paymentOptions = [
