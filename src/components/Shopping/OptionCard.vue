@@ -32,11 +32,7 @@ defineProps({
       :option="option"
       :checked="checked"
     >
-      <img
-        v-if="icon"
-        :src="'/src/assets/optionCardIcons/' + icon + '.svg'"
-        :alt="icon"
-      />
+      <img v-if="icon" :src="'/optionCardIcons/' + icon + '.svg'" :alt="icon" />
     </RadioInput>
 
     <p

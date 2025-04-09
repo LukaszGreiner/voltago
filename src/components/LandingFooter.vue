@@ -45,7 +45,7 @@ import FooterNav from "./Footer/FooterNav.vue";
       <div class="flex justify-center">
         <img
           class="h-[129px] w-[200px] md:h-[207px] md:w-[324px]"
-          src="/src/assets/img/contakt-avatar.png"
+          src="/img/contakt-avatar.png"
           alt="person talking on the phone"
         />
       </div>

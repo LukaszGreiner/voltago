@@ -4,16 +4,16 @@
     <picture>
       <source
         media="(min-width: 1280px)"
-        srcset="/src/assets/img/Voltago-hero__desktop.png"
+        srcset="/img/Voltago-hero__desktop.png"
       />
       <source
         media="(min-width: 768px)"
-        srcset="/src/assets/img/Voltago-hero__tablet.jpg"
+        srcset="/img/Voltago-hero__tablet.jpg"
       />
       <!-- xl:max-h-[calc(100vh-175px)]  175px - height of the splain below the image on the large screen-->
       <img
         class="xl:max-h-[calc(100vh-175px)] w-auto"
-        src="/src/assets/img/Voltago-hero__mobile.jpg"
+        src="/img/Voltago-hero__mobile.jpg"
         alt="Hero Image"
       />
     </picture>
