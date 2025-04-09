@@ -7,13 +7,12 @@ import RadioInput from "../components/utils/RadioInput.vue";
 import ScooterCard from "../components/Models/ScooterCard.vue";
 import ScooterCard2 from "../components/Shopping/ScooterCard2.vue";
 import SummaryCard from "../components/Shopping/SummaryCard.vue";
-import ScooterComparison from "../components/Models/ScootersComparison.vue";
 import ToggleCard from "../components/Shopping/ToggleCard.vue";
 import ShoppingWizard from "../components/Shopping/ShoppingWizard.vue";
 import OptionCardContainer from "../components/Shopping/OptionCardContainer.vue";
 import OptionCard from "../components/Shopping/OptionCard.vue";
 import TermsAndConditions from "../components/Shopping/TermsAndConditions.vue";
-import BackBtn from "@/components/utils/BackBtn.vue";
+import BackBtn from "../components/utils/BackBtn.vue";
 </script>
 <template>
   <div class="flex flex-col items-center p-4 h-full bg-slate-400 gap-4">

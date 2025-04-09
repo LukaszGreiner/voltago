@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import FooterNav from "./Footer/FooterNav.vue";
 </script>
 

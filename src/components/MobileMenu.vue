@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import burgerBtnClose from "./icons/burger-btn-close-icon.vue";
+<script setup>
 import BurgerBtn from "./utils/BurgerBtn.vue";
 
 const navItems = [

@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import FormField from "@/components/utils/FormField.vue";
 defineProps({
   required: Boolean,
 });
