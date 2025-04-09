@@ -3,7 +3,7 @@ import Btn from "./Btn.vue";
 </script>
 
 <template>
-  <Btn>
-    <RouterLink to="/yourscooterpage">Elektroroller kaufen</RouterLink>
-  </Btn>
+  <RouterLink to="/yourscooterpage">
+    <Btn class="w-full"> Elektroroller kaufen </Btn>
+  </RouterLink>
 </template>

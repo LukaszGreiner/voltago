@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
   option: {
     type: String,
@@ -15,6 +17,17 @@ const props = defineProps({
     default: false,
   },
 });
+
+const radioRef = ref(null);
+
+const handleKeydown = (event) => {
+  if (event.key === " " || event.key === "Enter") {
+    event.preventDefault();
+    if (radioRef.value) {
+      radioRef.value.click();
+    }
+  }
+};
 </script>
 
 <template>
@@ -22,9 +35,14 @@ const props = defineProps({
   <label class="flex items-center space-x-3">
     <!-- outer circle -->
     <div
-      class="bg-tlo-jasne z-1 flex h-6 w-6 items-center justify-center rounded-full border border-ciemny-zielony"
+      class="bg-tlo-jasne z-1 flex h-6 w-6 items-center justify-center rounded-full border border-ciemny-zielony cursor-pointer"
+      :tabindex="0"
+      :aria-checked="checked"
+      role="radio"
+      @keydown="handleKeydown"
     >
       <input
+        ref="radioRef"
         type="radio"
         :name="name"
         :value="value"

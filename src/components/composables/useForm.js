@@ -5,11 +5,11 @@ const formDetails = reactive({
   lastName: "Schwarz",
   email: "sven.sven@gmail.com",
   localPhone: "23122321",
-  phoneCountryCode: "",
-  street: "",
-  houseNumber: "",
-  postalCode: "",
-  city: "",
+  phoneCountryCode: "asd",
+  street: "asd",
+  houseNumber: "asd",
+  postalCode: "ds",
+  city: "ads",
 });
 
 const fullName = computed(() => {

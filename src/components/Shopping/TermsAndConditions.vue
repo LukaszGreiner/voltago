@@ -16,6 +16,7 @@ const { order } = useOrder();
         :isRequired="el.isRequired"
         :checked="el.accepted"
         @change="el.accepted = !el.accepted"
+        v-model="el.accepted"
       />
       <span class="ml-[10px] text-[14px] leading-[19.6px] font-[400]">
         {{ el.text }}

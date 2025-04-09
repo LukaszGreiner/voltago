@@ -40,10 +40,10 @@ const canOrder = computed(() => {
           >
         </SummaryCard>
       </div>
-      <BackBtn />
+      <BackBtn to="/orderdetailspage" />
     </template>
     <template #footer>
-      <ShoppingFooter class="lg:hidden">
+      <ShoppingFooter class="lg:hidden" nextPage="#">
         <NextPageBtn to="summarypage" :disabled="!canOrder" />
       </ShoppingFooter>
     </template>

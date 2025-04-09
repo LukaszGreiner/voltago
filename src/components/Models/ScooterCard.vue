@@ -56,8 +56,10 @@ defineProps({
     </div>
     <div class="flex flex-1 justify-center items-end">
       <div class="flex flex-col gap-4 w-[259px] h-[96px]">
-        <GoShoppingBtn />
-        <Btn btn-type="secondary">Download der Spezifikation </Btn>
+        <slot>
+          <GoShoppingBtn />
+          <Btn btn-type="secondary">Download der Spezifikation </Btn>
+        </slot>
       </div>
     </div>
   </div>

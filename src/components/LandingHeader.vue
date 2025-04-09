@@ -25,8 +25,8 @@ import BurgerBtn from "./utils/BurgerBtn.vue";
       <CallToAction
         class="-translate-y-1/3 xl:translate-y-0 xl:mt-0 flex flex-col justify-center xl:max-w-[528px] xl:row-start-1 px-4 md:px-0 md:ml-12 xl:ml-20 md:w-[502px]"
       />
+      <DashedSpline class="ml-auto xl:hidden absolute right-0 bottom-0" />
     </div>
-    <DashedSpline class="absolute right-0 bottom-0 xl:hidden" />
     <dashed-spline-horizontal-long class="hidden xl:block col-span-2 ml-auto" />
   </header>
 </template>

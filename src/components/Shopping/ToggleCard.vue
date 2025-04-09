@@ -86,7 +86,8 @@ const toggleOptions = () => {
 
 <template>
   <div
-    class="bg-tlo-ciemne h-fit w-[328px] p-4 border rounded-lg border-jasny-ciemny-zielen"
+    class="h-fit w-[328px] p-4 border rounded-lg border-jasny-ciemny-zielen"
+    :class="optionsOpen ? 'bg-tlo-ciemne' : 'bg-tlo-jasne'"
   >
     <div class="flex justify-center items-center">
       <div class="flex-1">

@@ -95,7 +95,7 @@ const scooterAccessories = [
         </SummaryCard>
       </div>
 
-      <BackBtn />
+      <BackBtn to="/yourscooterpage" />
     </template>
   </ShoppingLayout>
 </template>

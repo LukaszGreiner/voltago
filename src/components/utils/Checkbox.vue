@@ -1,11 +1,23 @@
 <script setup>
-defineProps({
+import { ref } from "vue";
+
+const props = defineProps({
   checked: {
     type: Boolean,
     default: false,
   },
   isRequired: Boolean,
 });
+
+const model = defineModel();
+
+// Toggle checkbox state on keydown (Space or Enter)
+const handleKeydown = (event) => {
+  if (event.key === " " || event.key === "Enter") {
+    event.preventDefault();
+    model.value = !model.value;
+  }
+};
 </script>
 
 <template>
@@ -14,12 +26,18 @@ defineProps({
     <label>
       <!-- outer square -->
       <div
-        class="bg-tlo-jasne z-1 flex h-6 w-6 items-center justify-center rounded-[4px] border border-ciemny-zielony"
+        :tabindex="0"
+        role="checkbox"
+        :aria-checked="model"
+        @keydown="handleKeydown"
+        @click="model = !model"
+        class="z-1 flex h-6 w-6 items-center justify-center rounded-[4px] border border-ciemny-zielony"
+        :class="model ? 'bg-tlo-ciemne' : 'bg-tlo-jasne'"
       >
         <input
           type="checkbox"
           class="peer hidden"
-          :checked="checked"
+          :checked="model"
           :required="isRequired"
         />
         <!-- inner square -->

@@ -13,14 +13,14 @@ const DrivingLicenceList = [
 
 <template>
   <!-- DrivingLicenceList list -->
-  <div class="mb-14 lg:mb-0 lg:mr-16">
+  <div class="relative">
     <h2
-      class="text-2xl lg:text-[32px] lg:leading-[44px] lg:relative lg:-left-[125px] lg:-top-10 lg:whitespace-nowrap"
+      class="text-[24px] leading-[32px] md:text-[32px] md:leading-[44px] mb-4 xl:absolute xl:-translate-y-[calc(2ch_+_24px)] xl:-translate-x-[120px]"
     >
       Das ist Dein Ticket für die Freiheit:
     </h2>
     <ul
-      class="text-base md:text-lg md:leading-6 lg:leading-[26px] mb-4 space-y-4 lg:space-y-5"
+      class="text-[16px] leading-[24px] md:text-[18px] md:leading-[26px] space-y-4 md:space-y-5"
     >
       <li v-for="line in DrivingLicenceList" :key="line">
         <DrivingLicenceListItem>{{ line }}</DrivingLicenceListItem>

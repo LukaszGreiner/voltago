@@ -3,6 +3,7 @@ import ScootersComparison from "@/components/Models/ScootersComparison.vue";
 import ShoppingLayout from "@/components/Shopping/ShoppingLayout.vue";
 import BackBtn from "@/components/utils/BackBtn.vue";
 import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
+import Scooters from "@/data/scooters";
 </script>
 
 <template>
@@ -14,27 +15,23 @@ import ScooterCard2 from "@/components/Shopping/ScooterCard2.vue";
 
       <div class="flex flex-col lg:flex-row items-center gap-4">
         <ScooterCard2
-          name="Elektro-Roller"
-          model="ZX-500"
-          :priceWithoutAssembly="1599"
-          :priceWithAssembly="1699"
-          src="src/assets/img/scooter-small-1.png"
-          :withAssembly="false"
-        />
-        <span>oder</span>
-        <ScooterCard2
-          name="Elektro-Roller"
-          model="DJO3-V55"
-          :priceWithoutAssembly="1900"
-          :priceWithAssembly="1999"
-          src="src/assets/img/scooter-small-2.png"
-        />
+          v-for="(scooter, index) in Scooters"
+          :name="scooter.name"
+          :key="scooter.model"
+          :model="scooter.model"
+          :basePrice="scooter.basePrice"
+          :priceWithAssembly="scooter.priceWithAssembly"
+          :src="scooter.src"
+          :withAssembly="scooter.withAssembly"
+        >
+          <span v-if="index < Scooters.length - 1">oder</span>
+        </ScooterCard2>
       </div>
       <div
-        class="border-b border-dashed border-jasny-ciemny-zielen h-[1px] w-auto mt-10 mb-6"
+        class="border-b border-dashed border-jasny-ciemny-zielen h-[1] w-full mt-10 mb-6"
       ></div>
       <ScootersComparison />
-      <BackBtn>Zurück zur Homepage</BackBtn>
+      <BackBtn to="/">Zurück zur Homepage</BackBtn>
     </template>
   </ShoppingLayout>
 </template>
